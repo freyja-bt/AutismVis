@@ -1,0 +1,984 @@
+Year,Country of Origin (ISO),origin,Country of Resettlement (ISO),destination,submissions
+2011,MMR,Myanmar,FIN,Finland,141
+2011,SOM,Somalia,DNK,Denmark,26
+2011,ERI,Eritrea,FRA,France,3
+2011,SDN,Sudan,DNK,Denmark,11
+2011,SDN,Sudan,PRT,Portugal,3
+2011,AFG,Afghanistan,NLD,Netherlands,10
+2011,COD,Dem. Rep. of the Congo,CAN,Canada,81
+2011,SYR,Syrian Arab Rep.,CAN,Canada,13
+2011,BTN,Bhutan,NOR,Norway,181
+2011,SOM,Somalia,NLD,Netherlands,13
+2011,AFG,Afghanistan,FIN,Finland,344
+2011,SOM,Somalia,CAN,Canada,423
+2011,MMR,Myanmar,DNK,Denmark,178
+2011,MMR,Myanmar,NZL,New Zealand,351
+2011,MMR,Myanmar,JPN,Japan,31
+2011,SOM,Somalia,NOR,Norway,305
+2011,IRN,Iran (Islamic Rep. of),CAN,Canada,560
+2011,ERI,Eritrea,DNK,Denmark,51
+2011,SDN,Sudan,CAN,Canada,15
+2011,IRN,Iran (Islamic Rep. of),NOR,Norway,255
+2011,AFG,Afghanistan,AUS,Australia,790
+2011,ERI,Eritrea,USA,United States of America,1549
+2011,COD,Dem. Rep. of the Congo,NLD,Netherlands,28
+2011,BTN,Bhutan,NZL,New Zealand,88
+2011,SDN,Sudan,NZL,New Zealand,6
+2011,IRQ,Iraq,FIN,Finland,10
+2011,SOM,Somalia,SWE,Sweden,687
+2011,SOM,Somalia,FIN,Finland,7
+2011,MMR,Myanmar,SWE,Sweden,50
+2011,COD,Dem. Rep. of the Congo,BEL,Belgium,3
+2011,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,34
+2011,COD,Dem. Rep. of the Congo,USA,United States of America,2918
+2011,IRQ,Iraq,NZL,New Zealand,214
+2011,IRN,Iran (Islamic Rep. of),USA,United States of America,1301
+2011,IRN,Iran (Islamic Rep. of),DEU,Germany,17
+2011,MMR,Myanmar,AUS,Australia,1623
+2011,ERI,Eritrea,AUS,Australia,224
+2011,ERI,Eritrea,NLD,Netherlands,38
+2011,AFG,Afghanistan,GBR,United Kingdom of Great Britain and Northern Ireland,9
+2011,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,2
+2011,IRN,Iran (Islamic Rep. of),FRA,France,22
+2011,SDN,Sudan,USA,United States of America,2171
+2011,COD,Dem. Rep. of the Congo,DNK,Denmark,170
+2011,ERI,Eritrea,PRT,Portugal,25
+2011,COD,Dem. Rep. of the Congo,AUS,Australia,542
+2011,COD,Dem. Rep. of the Congo,SWE,Sweden,69
+2011,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,42
+2011,BTN,Bhutan,CAN,Canada,1105
+2011,AFG,Afghanistan,USA,United States of America,827
+2011,IRN,Iran (Islamic Rep. of),BEL,Belgium,3
+2011,MMR,Myanmar,NLD,Netherlands,143
+2011,ERI,Eritrea,SWE,Sweden,392
+2011,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,359
+2011,COD,Dem. Rep. of the Congo,FIN,Finland,160
+2011,IRQ,Iraq,FRA,France,9
+2011,IRN,Iran (Islamic Rep. of),DNK,Denmark,3
+2011,IRN,Iran (Islamic Rep. of),GBR,United Kingdom of Great Britain and Northern Ireland,6
+2011,SDN,Sudan,SWE,Sweden,54
+2011,BTN,Bhutan,USA,United States of America,10403
+2011,ERI,Eritrea,BEL,Belgium,14
+2011,AFG,Afghanistan,NZL,New Zealand,7
+2011,COD,Dem. Rep. of the Congo,FRA,France,15
+2011,IRQ,Iraq,IRL,Ireland,6
+2011,BTN,Bhutan,AUS,Australia,904
+2011,AFG,Afghanistan,CAN,Canada,316
+2011,SYR,Syrian Arab Rep.,NOR,Norway,1
+2011,MMR,Myanmar,CAN,Canada,114
+2011,ERI,Eritrea,CAN,Canada,134
+2011,SYR,Syrian Arab Rep.,CHE,Switzerland,36
+2011,IRQ,Iraq,DNK,Denmark,6
+2011,IRN,Iran (Islamic Rep. of),SWE,Sweden,48
+2011,SYR,Syrian Arab Rep.,SWE,Sweden,14
+2011,SDN,Sudan,AUS,Australia,61
+2011,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,2
+2011,SOM,Somalia,NZL,New Zealand,2
+2011,COD,Dem. Rep. of the Congo,NOR,Norway,59
+2011,IRQ,Iraq,NOR,Norway,12
+2011,BTN,Bhutan,DNK,Denmark,133
+2011,AFG,Afghanistan,SWE,Sweden,415
+2011,IRN,Iran (Islamic Rep. of),AUS,Australia,260
+2011,ERI,Eritrea,FIN,Finland,16
+2011,SYR,Syrian Arab Rep.,NLD,Netherlands,1
+2011,ERI,Eritrea,ESP,Spain,11
+2011,SDN,Sudan,NLD,Netherlands,7
+2011,SYR,Syrian Arab Rep.,DNK,Denmark,1
+2011,SDN,Sudan,NOR,Norway,103
+2011,SDN,Sudan,ESP,Spain,40
+2011,IRN,Iran (Islamic Rep. of),NLD,Netherlands,21
+2011,IRQ,Iraq,USA,United States of America,15493
+2011,IRQ,Iraq,NLD,Netherlands,110
+2011,BTN,Bhutan,GBR,United Kingdom of Great Britain and Northern Ireland,180
+2011,AFG,Afghanistan,DNK,Denmark,1
+2011,IRQ,Iraq,AUS,Australia,1154
+2011,IRQ,Iraq,CAN,Canada,2860
+2011,SYR,Syrian Arab Rep.,FRA,France,1
+2011,IRQ,Iraq,CHE,Switzerland,38
+2011,SOM,Somalia,AUS,Australia,727
+2011,SOM,Somalia,FRA,France,83
+2011,ERI,Eritrea,NOR,Norway,457
+2011,SDN,Sudan,FIN,Finland,18
+2011,SDN,Sudan,IRL,Ireland,26
+2011,MMR,Myanmar,USA,United States of America,18475
+2011,SOM,Somalia,USA,United States of America,13087
+2011,SYR,Syrian Arab Rep.,USA,United States of America,57
+2011,BTN,Bhutan,NLD,Netherlands,101
+2011,AFG,Afghanistan,FRA,France,38
+2011,AFG,Afghanistan,NOR,Norway,284
+2011,IRQ,Iraq,SWE,Sweden,40
+2011,MMR,Myanmar,NOR,Norway,184
+2011,SYR,Syrian Arab Rep.,AUS,Australia,1
+2012,SOM,Somalia,PRT,Portugal,3
+2012,SYR,Syrian Arab Rep.,NZL,New Zealand,1
+2012,ERI,Eritrea,DNK,Denmark,60
+2012,AFG,Afghanistan,FRA,France,59
+2012,COD,Dem. Rep. of the Congo,DNK,Denmark,12
+2012,BTN,Bhutan,DNK,Denmark,147
+2012,SDN,Sudan,CHE,Switzerland,1
+2012,SOM,Somalia,CAN,Canada,1246
+2012,SYR,Syrian Arab Rep.,USA,United States of America,16
+2012,SYR,Syrian Arab Rep.,CAN,Canada,11
+2012,ERI,Eritrea,ESP,Spain,4
+2012,COD,Dem. Rep. of the Congo,SWE,Sweden,54
+2012,SDN,Sudan,PRT,Portugal,19
+2012,SYR,Syrian Arab Rep.,CHE,Switzerland,1
+2012,COD,Dem. Rep. of the Congo,FRA,France,1
+2012,COD,Dem. Rep. of the Congo,DEU,Germany,1
+2012,ERI,Eritrea,PRT,Portugal,2
+2012,AFG,Afghanistan,ISL,Iceland,25
+2012,SDN,Sudan,DNK,Denmark,5
+2012,BTN,Bhutan,GBR,United Kingdom of Great Britain and Northern Ireland,101
+2012,AFG,Afghanistan,PRT,Portugal,1
+2012,SOM,Somalia,NZL,New Zealand,24
+2012,COD,Dem. Rep. of the Congo,NLD,Netherlands,45
+2012,SOM,Somalia,FRA,France,28
+2012,ERI,Eritrea,FRA,France,2
+2012,ERI,Eritrea,USA,United States of America,768
+2012,MMR,Myanmar,AUS,Australia,1949
+2012,SDN,Sudan,NOR,Norway,27
+2012,BTN,Bhutan,USA,United States of America,8241
+2012,AFG,Afghanistan,CAN,Canada,449
+2012,MMR,Myanmar,NOR,Norway,181
+2012,IRN,Iran (Islamic Rep. of),SWE,Sweden,21
+2012,ERI,Eritrea,DEU,Germany,55
+2012,IRQ,Iraq,USA,United States of America,6392
+2012,IRN,Iran (Islamic Rep. of),IRL,Ireland,5
+2012,IRQ,Iraq,SWE,Sweden,26
+2012,BTN,Bhutan,NZL,New Zealand,60
+2012,IRN,Iran (Islamic Rep. of),DEU,Germany,12
+2012,SOM,Somalia,SWE,Sweden,535
+2012,COD,Dem. Rep. of the Congo,NOR,Norway,54
+2012,SOM,Somalia,AUS,Australia,38
+2012,SYR,Syrian Arab Rep.,AUS,Australia,2
+2012,ERI,Eritrea,CAN,Canada,198
+2012,MMR,Myanmar,CAN,Canada,219
+2012,AFG,Afghanistan,USA,United States of America,838
+2012,MMR,Myanmar,DNK,Denmark,122
+2012,AFG,Afghanistan,SWE,Sweden,484
+2012,ERI,Eritrea,CHE,Switzerland,1
+2012,IRQ,Iraq,CAN,Canada,582
+2012,IRN,Iran (Islamic Rep. of),FIN,Finland,120
+2012,MMR,Myanmar,NZL,New Zealand,222
+2012,BTN,Bhutan,NOR,Norway,19
+2012,IRN,Iran (Islamic Rep. of),GBR,United Kingdom of Great Britain and Northern Ireland,4
+2012,SDN,Sudan,USA,United States of America,1943
+2012,SOM,Somalia,NLD,Netherlands,7
+2012,COD,Dem. Rep. of the Congo,AUS,Australia,437
+2012,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,318
+2012,ERI,Eritrea,SWE,Sweden,293
+2012,AFG,Afghanistan,NZL,New Zealand,38
+2012,IRN,Iran (Islamic Rep. of),AUS,Australia,319
+2012,AFG,Afghanistan,NLD,Netherlands,51
+2012,MMR,Myanmar,CZE,Czechia,63
+2012,MMR,Myanmar,SWE,Sweden,1
+2012,IRQ,Iraq,DEU,Germany,160
+2012,IRQ,Iraq,DNK,Denmark,6
+2012,IRN,Iran (Islamic Rep. of),FRA,France,7
+2012,SOM,Somalia,DNK,Denmark,70
+2012,SOM,Somalia,IRL,Ireland,2
+2012,IRN,Iran (Islamic Rep. of),PRT,Portugal,2
+2012,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,96
+2012,SDN,Sudan,NLD,Netherlands,10
+2012,ERI,Eritrea,NOR,Norway,62
+2012,COD,Dem. Rep. of the Congo,IRL,Ireland,20
+2012,ERI,Eritrea,AUS,Australia,325
+2012,ERI,Eritrea,NZL,New Zealand,14
+2012,IRN,Iran (Islamic Rep. of),NZL,New Zealand,9
+2012,COD,Dem. Rep. of the Congo,USA,United States of America,4198
+2012,COD,Dem. Rep. of the Congo,PRT,Portugal,1
+2012,AFG,Afghanistan,AUS,Australia,2230
+2012,SOM,Somalia,DEU,Germany,62
+2012,IRQ,Iraq,NOR,Norway,18
+2012,SYR,Syrian Arab Rep.,NOR,Norway,3
+2012,SDN,Sudan,CAN,Canada,43
+2012,AFG,Afghanistan,DNK,Denmark,2
+2012,IRN,Iran (Islamic Rep. of),CAN,Canada,526
+2012,IRQ,Iraq,FRA,France,1
+2012,SDN,Sudan,AUS,Australia,146
+2012,IRN,Iran (Islamic Rep. of),NLD,Netherlands,11
+2012,SOM,Somalia,NOR,Norway,289
+2012,MMR,Myanmar,FIN,Finland,155
+2012,ERI,Eritrea,FIN,Finland,45
+2012,IRQ,Iraq,AUS,Australia,3275
+2012,IRN,Iran (Islamic Rep. of),USA,United States of America,1453
+2012,BTN,Bhutan,CAN,Canada,575
+2012,MMR,Myanmar,USA,United States of America,19075
+2012,SDN,Sudan,DEU,Germany,93
+2012,IRQ,Iraq,NZL,New Zealand,61
+2012,ERI,Eritrea,ITA,Italy,7
+2012,ERI,Eritrea,NLD,Netherlands,39
+2012,SDN,Sudan,FRA,France,1
+2012,IRN,Iran (Islamic Rep. of),NOR,Norway,387
+2012,IRN,Iran (Islamic Rep. of),HUN,Hungary,1
+2012,SDN,Sudan,NZL,New Zealand,117
+2012,IRQ,Iraq,NLD,Netherlands,115
+2012,SOM,Somalia,FIN,Finland,64
+2012,MMR,Myanmar,NLD,Netherlands,60
+2012,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,350
+2012,MMR,Myanmar,JPN,Japan,27
+2012,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,18
+2012,AFG,Afghanistan,FIN,Finland,314
+2012,AFG,Afghanistan,NOR,Norway,74
+2012,BTN,Bhutan,AUS,Australia,780
+2012,SDN,Sudan,ESP,Spain,2
+2012,SOM,Somalia,USA,United States of America,4456
+2012,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,86
+2012,SYR,Syrian Arab Rep.,SWE,Sweden,56
+2012,COD,Dem. Rep. of the Congo,FIN,Finland,180
+2012,COD,Dem. Rep. of the Congo,CAN,Canada,1154
+2012,SDN,Sudan,SWE,Sweden,129
+2012,IRQ,Iraq,FIN,Finland,38
+2013,SYR,Syrian Arab Rep.,SWE,Sweden,424
+2013,COD,Dem. Rep. of the Congo,DNK,Denmark,165
+2013,MMR,Myanmar,SWE,Sweden,45
+2013,SOM,Somalia,CAN,Canada,320
+2013,MMR,Myanmar,GBR,United Kingdom of Great Britain and Northern Ireland,2
+2013,MMR,Myanmar,USA,United States of America,20586
+2013,SYR,Syrian Arab Rep.,FRA,France,72
+2013,AFG,Afghanistan,BRA,Brazil,1
+2013,BTN,Bhutan,CAN,Canada,619
+2013,SDN,Sudan,CAN,Canada,191
+2013,SOM,Somalia,PRT,Portugal,3
+2013,SOM,Somalia,AUS,Australia,37
+2013,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,159
+2013,ERI,Eritrea,USA,United States of America,1323
+2013,SYR,Syrian Arab Rep.,GBR,United Kingdom of Great Britain and Northern Ireland,1
+2013,SDN,Sudan,NLD,Netherlands,10
+2013,SYR,Syrian Arab Rep.,NLD,Netherlands,104
+2013,COD,Dem. Rep. of the Congo,NOR,Norway,213
+2013,SDN,Sudan,NZL,New Zealand,4
+2013,SOM,Somalia,FRA,France,87
+2013,SDN,Sudan,PRT,Portugal,1
+2013,MMR,Myanmar,CAN,Canada,622
+2013,SYR,Syrian Arab Rep.,LUX,Luxembourg,25
+2013,COD,Dem. Rep. of the Congo,ISL,Iceland,1
+2013,ERI,Eritrea,FRA,France,23
+2013,BTN,Bhutan,NZL,New Zealand,122
+2013,SDN,Sudan,NOR,Norway,17
+2013,COD,Dem. Rep. of the Congo,NZL,New Zealand,9
+2013,AFG,Afghanistan,FIN,Finland,279
+2013,SOM,Somalia,NLD,Netherlands,9
+2013,ERI,Eritrea,AUS,Australia,279
+2013,COD,Dem. Rep. of the Congo,IRL,Ireland,31
+2013,IRN,Iran (Islamic Rep. of),BEL,Belgium,1
+2013,IRN,Iran (Islamic Rep. of),DEU,Germany,147
+2013,ERI,Eritrea,DNK,Denmark,3
+2013,COD,Dem. Rep. of the Congo,FRA,France,21
+2013,SYR,Syrian Arab Rep.,NZL,New Zealand,3
+2013,SOM,Somalia,SWE,Sweden,373
+2013,AFG,Afghanistan,PRT,Portugal,4
+2013,AFG,Afghanistan,NZL,New Zealand,45
+2013,SYR,Syrian Arab Rep.,NOR,Norway,9
+2013,AFG,Afghanistan,BEL,Belgium,1
+2013,ERI,Eritrea,NOR,Norway,277
+2013,BTN,Bhutan,DNK,Denmark,122
+2013,SDN,Sudan,DNK,Denmark,38
+2013,IRN,Iran (Islamic Rep. of),ISL,Iceland,4
+2013,AFG,Afghanistan,NOR,Norway,247
+2013,SOM,Somalia,ISL,Iceland,1
+2013,ERI,Eritrea,SWE,Sweden,491
+2013,IRN,Iran (Islamic Rep. of),NLD,Netherlands,7
+2013,IRQ,Iraq,SWE,Sweden,3
+2013,IRN,Iran (Islamic Rep. of),NZL,New Zealand,9
+2013,ERI,Eritrea,NZL,New Zealand,29
+2013,COD,Dem. Rep. of the Congo,AUS,Australia,850
+2013,COD,Dem. Rep. of the Congo,FIN,Finland,169
+2013,SDN,Sudan,USA,United States of America,2223
+2013,IRN,Iran (Islamic Rep. of),FIN,Finland,156
+2013,IRN,Iran (Islamic Rep. of),AUS,Australia,465
+2013,SYR,Syrian Arab Rep.,CAN,Canada,105
+2013,IRN,Iran (Islamic Rep. of),DNK,Denmark,1
+2013,ERI,Eritrea,FIN,Finland,21
+2013,BTN,Bhutan,GBR,United Kingdom of Great Britain and Northern Ireland,3
+2013,SDN,Sudan,IRL,Ireland,5
+2013,SOM,Somalia,IRL,Ireland,5
+2013,AFG,Afghanistan,FRA,France,28
+2013,IRN,Iran (Islamic Rep. of),USA,United States of America,1169
+2013,SDN,Sudan,FRA,France,19
+2013,ERI,Eritrea,CAN,Canada,1079
+2013,SYR,Syrian Arab Rep.,DEU,Germany,4253
+2013,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,4
+2013,MMR,Myanmar,JPN,Japan,69
+2013,AFG,Afghanistan,CAN,Canada,241
+2013,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,175
+2013,COD,Dem. Rep. of the Congo,SWE,Sweden,270
+2013,COD,Dem. Rep. of the Congo,PRT,Portugal,3
+2013,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,162
+2013,IRN,Iran (Islamic Rep. of),FRA,France,5
+2013,IRQ,Iraq,AUS,Australia,2517
+2013,SYR,Syrian Arab Rep.,HUN,Hungary,5
+2013,AFG,Afghanistan,DEU,Germany,5
+2013,ERI,Eritrea,NLD,Netherlands,207
+2013,BTN,Bhutan,NOR,Norway,3
+2013,AFG,Afghanistan,USA,United States of America,926
+2013,COD,Dem. Rep. of the Congo,CHL,Chile,3
+2013,AFG,Afghanistan,ISL,Iceland,16
+2013,SYR,Syrian Arab Rep.,USA,United States of America,107
+2013,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,178
+2013,SYR,Syrian Arab Rep.,CHE,Switzerland,21
+2013,IRQ,Iraq,USA,United States of America,7409
+2013,MMR,Myanmar,FIN,Finland,2
+2013,AFG,Afghanistan,AUS,Australia,2880
+2013,IRQ,Iraq,NLD,Netherlands,167
+2013,COD,Dem. Rep. of the Congo,NLD,Netherlands,230
+2013,IRN,Iran (Islamic Rep. of),PRT,Portugal,13
+2013,SDN,Sudan,AUS,Australia,88
+2013,IRN,Iran (Islamic Rep. of),GBR,United Kingdom of Great Britain and Northern Ireland,2
+2013,IRQ,Iraq,NZL,New Zealand,79
+2013,SYR,Syrian Arab Rep.,AUS,Australia,114
+2013,IRQ,Iraq,CHE,Switzerland,26
+2013,ERI,Eritrea,ISL,Iceland,1
+2013,AFG,Afghanistan,NLD,Netherlands,5
+2013,AFG,Afghanistan,IRL,Ireland,42
+2013,COD,Dem. Rep. of the Congo,CAN,Canada,733
+2013,SYR,Syrian Arab Rep.,DNK,Denmark,1
+2013,IRQ,Iraq,CAN,Canada,2365
+2013,MMR,Myanmar,NOR,Norway,11
+2013,AFG,Afghanistan,SWE,Sweden,452
+2013,IRQ,Iraq,FRA,France,15
+2013,IRN,Iran (Islamic Rep. of),CAN,Canada,821
+2013,BTN,Bhutan,USA,United States of America,5472
+2013,SDN,Sudan,FIN,Finland,187
+2013,IRQ,Iraq,ROU,Romania,82
+2013,MMR,Myanmar,NZL,New Zealand,262
+2013,IRQ,Iraq,FIN,Finland,26
+2013,IRQ,Iraq,DEU,Germany,349
+2013,SOM,Somalia,DNK,Denmark,53
+2013,AFG,Afghanistan,DNK,Denmark,3
+2013,IRN,Iran (Islamic Rep. of),SWE,Sweden,15
+2013,IRN,Iran (Islamic Rep. of),NOR,Norway,11
+2013,COD,Dem. Rep. of the Congo,BEL,Belgium,76
+2013,SYR,Syrian Arab Rep.,ISL,Iceland,1
+2013,SOM,Somalia,USA,United States of America,7606
+2013,MMR,Myanmar,NLD,Netherlands,2
+2013,MMR,Myanmar,AUS,Australia,1880
+2013,SYR,Syrian Arab Rep.,AUT,Austria,32
+2013,SOM,Somalia,FIN,Finland,36
+2013,BTN,Bhutan,AUS,Australia,729
+2013,SDN,Sudan,SWE,Sweden,75
+2013,IRQ,Iraq,PRT,Portugal,6
+2013,SOM,Somalia,NZL,New Zealand,19
+2013,IRQ,Iraq,NOR,Norway,6
+2013,COD,Dem. Rep. of the Congo,USA,United States of America,8905
+2013,SOM,Somalia,DEU,Germany,10
+2013,SOM,Somalia,NOR,Norway,246
+2014,SOM,Somalia,USA,United States of America,8208
+2014,COD,Dem. Rep. of the Congo,NOR,Norway,258
+2014,AFG,Afghanistan,NZL,New Zealand,521
+2014,SDN,Sudan,FIN,Finland,188
+2014,SYR,Syrian Arab Rep.,LUX,Luxembourg,59
+2014,SYR,Syrian Arab Rep.,IRL,Ireland,114
+2014,SOM,Somalia,DNK,Denmark,43
+2014,ERI,Eritrea,NZL,New Zealand,15
+2014,COD,Dem. Rep. of the Congo,FRA,France,4
+2014,SOM,Somalia,DEU,Germany,33
+2014,SYR,Syrian Arab Rep.,DEU,Germany,2108
+2014,SYR,Syrian Arab Rep.,BLR,Belarus,24
+2014,ERI,Eritrea,FRA,France,12
+2014,IRQ,Iraq,NLD,Netherlands,20
+2014,SDN,Sudan,DEU,Germany,2
+2014,SYR,Syrian Arab Rep.,NOR,Norway,1193
+2014,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,253
+2014,COD,Dem. Rep. of the Congo,CAN,Canada,2409
+2014,BTN,Bhutan,USA,United States of America,4894
+2014,AFG,Afghanistan,CAN,Canada,260
+2014,SDN,Sudan,DNK,Denmark,37
+2014,SYR,Syrian Arab Rep.,LIE,Liechtenstein,20
+2014,SYR,Syrian Arab Rep.,NLD,Netherlands,169
+2014,SOM,Somalia,FIN,Finland,41
+2014,IRQ,Iraq,USA,United States of America,7115
+2014,AFG,Afghanistan,GBR,United Kingdom of Great Britain and Northern Ireland,3
+2014,AFG,Afghanistan,SWE,Sweden,352
+2014,SYR,Syrian Arab Rep.,SWE,Sweden,782
+2014,SYR,Syrian Arab Rep.,HUN,Hungary,4
+2014,ERI,Eritrea,DNK,Denmark,6
+2014,IRQ,Iraq,NOR,Norway,17
+2014,MMR,Myanmar,NOR,Norway,3
+2014,ERI,Eritrea,AUT,Austria,3
+2014,COD,Dem. Rep. of the Congo,BEL,Belgium,85
+2014,ERI,Eritrea,CAN,Canada,1488
+2014,BTN,Bhutan,CAN,Canada,423
+2014,AFG,Afghanistan,DEU,Germany,26
+2014,SDN,Sudan,CAN,Canada,300
+2014,SYR,Syrian Arab Rep.,ISL,Iceland,14
+2014,SYR,Syrian Arab Rep.,CZE,Czechia,11
+2014,SOM,Somalia,NOR,Norway,52
+2014,IRQ,Iraq,NZL,New Zealand,109
+2014,MMR,Myanmar,DNK,Denmark,1
+2014,AFG,Afghanistan,FIN,Finland,206
+2014,SYR,Syrian Arab Rep.,NZL,New Zealand,122
+2014,SYR,Syrian Arab Rep.,BEL,Belgium,96
+2014,AFG,Afghanistan,USA,United States of America,1894
+2014,SOM,Somalia,NZL,New Zealand,82
+2014,IRN,Iran (Islamic Rep. of),FIN,Finland,2
+2014,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,110
+2014,COD,Dem. Rep. of the Congo,NLD,Netherlands,100
+2014,IRQ,Iraq,SWE,Sweden,12
+2014,COD,Dem. Rep. of the Congo,SWE,Sweden,214
+2014,ERI,Eritrea,AUS,Australia,117
+2014,BTN,Bhutan,AUS,Australia,17
+2014,IRN,Iran (Islamic Rep. of),AUS,Australia,323
+2014,SDN,Sudan,NLD,Netherlands,14
+2014,COD,Dem. Rep. of the Congo,NZL,New Zealand,4
+2014,IRN,Iran (Islamic Rep. of),GBR,United Kingdom of Great Britain and Northern Ireland,4
+2014,MMR,Myanmar,SWE,Sweden,7
+2014,IRQ,Iraq,CAN,Canada,2990
+2014,MMR,Myanmar,FIN,Finland,1
+2014,AFG,Afghanistan,ISL,Iceland,10
+2014,SYR,Syrian Arab Rep.,FRA,France,544
+2014,MMR,Myanmar,CAN,Canada,731
+2014,AFG,Afghanistan,NOR,Norway,292
+2014,SOM,Somalia,FRA,France,13
+2014,IRN,Iran (Islamic Rep. of),DNK,Denmark,4
+2014,SOM,Somalia,SWE,Sweden,372
+2014,COD,Dem. Rep. of the Congo,DNK,Denmark,143
+2014,ERI,Eritrea,PRT,Portugal,14
+2014,BTN,Bhutan,NZL,New Zealand,211
+2014,IRN,Iran (Islamic Rep. of),NZL,New Zealand,24
+2014,SDN,Sudan,PRT,Portugal,8
+2014,IRN,Iran (Islamic Rep. of),ISL,Iceland,4
+2014,ERI,Eritrea,FIN,Finland,3
+2014,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,1
+2014,IRQ,Iraq,CZE,Czechia,9
+2014,MMR,Myanmar,NLD,Netherlands,1
+2014,AFG,Afghanistan,NLD,Netherlands,9
+2014,SYR,Syrian Arab Rep.,PRT,Portugal,27
+2014,MMR,Myanmar,JPN,Japan,58
+2014,AFG,Afghanistan,AUS,Australia,1167
+2014,SOM,Somalia,CAN,Canada,303
+2014,IRN,Iran (Islamic Rep. of),NOR,Norway,7
+2014,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,215
+2014,IRN,Iran (Islamic Rep. of),BEL,Belgium,1
+2014,SYR,Syrian Arab Rep.,AUT,Austria,457
+2014,COD,Dem. Rep. of the Congo,FIN,Finland,199
+2014,ERI,Eritrea,SWE,Sweden,173
+2014,BTN,Bhutan,DNK,Denmark,3
+2014,IRQ,Iraq,AUS,Australia,1220
+2014,SDN,Sudan,FRA,France,14
+2014,COD,Dem. Rep. of the Congo,CHE,Switzerland,2
+2014,IRQ,Iraq,FRA,France,9
+2014,IRN,Iran (Islamic Rep. of),CAN,Canada,784
+2014,IRQ,Iraq,DNK,Denmark,21
+2014,SDN,Sudan,SWE,Sweden,8
+2014,IRN,Iran (Islamic Rep. of),NLD,Netherlands,12
+2014,SYR,Syrian Arab Rep.,GBR,United Kingdom of Great Britain and Northern Ireland,242
+2014,AFG,Afghanistan,FRA,France,6
+2014,MMR,Myanmar,GBR,United Kingdom of Great Britain and Northern Ireland,3
+2014,IRN,Iran (Islamic Rep. of),USA,United States of America,1434
+2014,MMR,Myanmar,USA,United States of America,13055
+2014,SOM,Somalia,PRT,Portugal,1
+2014,IRN,Iran (Islamic Rep. of),FRA,France,2
+2014,SYR,Syrian Arab Rep.,FIN,Finland,629
+2014,COD,Dem. Rep. of the Congo,MCO,Monaco,10
+2014,ERI,Eritrea,NLD,Netherlands,93
+2014,BTN,Bhutan,NOR,Norway,16
+2014,MMR,Myanmar,DEU,Germany,16
+2014,SDN,Sudan,NOR,Norway,25
+2014,SYR,Syrian Arab Rep.,CHE,Switzerland,378
+2014,SYR,Syrian Arab Rep.,BRA,Brazil,2
+2014,IRQ,Iraq,FIN,Finland,37
+2014,IRQ,Iraq,DEU,Germany,75
+2014,IRN,Iran (Islamic Rep. of),SWE,Sweden,16
+2014,SYR,Syrian Arab Rep.,AUS,Australia,588
+2014,COD,Dem. Rep. of the Congo,USA,United States of America,14985
+2014,SOM,Somalia,NLD,Netherlands,7
+2014,MMR,Myanmar,AUS,Australia,1037
+2014,SDN,Sudan,USA,United States of America,1951
+2014,IRQ,Iraq,MEX,Mexico,1
+2014,SYR,Syrian Arab Rep.,ESP,Spain,202
+2014,COD,Dem. Rep. of the Congo,AUS,Australia,162
+2014,ERI,Eritrea,NOR,Norway,33
+2014,BTN,Bhutan,NLD,Netherlands,2
+2014,MMR,Myanmar,NZL,New Zealand,257
+2014,SYR,Syrian Arab Rep.,USA,United States of America,10200
+2014,SYR,Syrian Arab Rep.,URY,Uruguay,188
+2014,SOM,Somalia,AUS,Australia,18
+2014,IRQ,Iraq,IRL,Ireland,9
+2014,IRQ,Iraq,CHE,Switzerland,24
+2014,SYR,Syrian Arab Rep.,DNK,Denmark,165
+2014,SYR,Syrian Arab Rep.,CAN,Canada,2816
+2014,ERI,Eritrea,USA,United States of America,1633
+2014,SDN,Sudan,NZL,New Zealand,3
+2015,ERI,Eritrea,NLD,Netherlands,8
+2015,IRQ,Iraq,PRT,Portugal,3
+2015,IRN,Iran (Islamic Rep. of),SWE,Sweden,20
+2015,IRQ,Iraq,IRL,Ireland,64
+2015,SYR,Syrian Arab Rep.,NOR,Norway,3420
+2015,MMR,Myanmar,KOR,Rep. of Korea,38
+2015,AFG,Afghanistan,AUS,Australia,848
+2015,SYR,Syrian Arab Rep.,USA,United States of America,16306
+2015,SDN,Sudan,DEU,Germany,131
+2015,IRQ,Iraq,NOR,Norway,5
+2015,SYR,Syrian Arab Rep.,ISL,Iceland,63
+2015,COD,Dem. Rep. of the Congo,NZL,New Zealand,9
+2015,ERI,Eritrea,CAN,Canada,149
+2015,SYR,Syrian Arab Rep.,NZL,New Zealand,604
+2015,SYR,Syrian Arab Rep.,ESP,Spain,6
+2015,SDN,Sudan,CAN,Canada,64
+2015,BTN,Bhutan,DNK,Denmark,1
+2015,MMR,Myanmar,FRA,France,1
+2015,ERI,Eritrea,NOR,Norway,12
+2015,IRQ,Iraq,CAN,Canada,1863
+2015,IRN,Iran (Islamic Rep. of),NLD,Netherlands,4
+2015,IRQ,Iraq,CZE,Czechia,23
+2015,SYR,Syrian Arab Rep.,DNK,Denmark,336
+2015,MMR,Myanmar,DNK,Denmark,5
+2015,IRN,Iran (Islamic Rep. of),AUS,Australia,139
+2015,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,136
+2015,SYR,Syrian Arab Rep.,MCO,Monaco,13
+2015,COD,Dem. Rep. of the Congo,AUS,Australia,168
+2015,ERI,Eritrea,AUS,Australia,50
+2015,AFG,Afghanistan,NOR,Norway,256
+2015,SYR,Syrian Arab Rep.,HUN,Hungary,23
+2015,SYR,Syrian Arab Rep.,CAN,Canada,18192
+2015,SYR,Syrian Arab Rep.,DEU,Germany,448
+2015,SOM,Somalia,FRA,France,5
+2015,AFG,Afghanistan,NZL,New Zealand,95
+2015,SOM,Somalia,USA,United States of America,9551
+2015,SOM,Somalia,NLD,Netherlands,11
+2015,IRQ,Iraq,NLD,Netherlands,17
+2015,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,191
+2015,IRN,Iran (Islamic Rep. of),BEL,Belgium,18
+2015,IRN,Iran (Islamic Rep. of),NZL,New Zealand,34
+2015,SDN,Sudan,FIN,Finland,13
+2015,MMR,Myanmar,JPN,Japan,53
+2015,COD,Dem. Rep. of the Congo,FIN,Finland,232
+2015,ERI,Eritrea,PRT,Portugal,1
+2015,AFG,Afghanistan,SWE,Sweden,95
+2015,SYR,Syrian Arab Rep.,IRL,Ireland,560
+2015,SYR,Syrian Arab Rep.,FIN,Finland,763
+2015,SOM,Somalia,NOR,Norway,2
+2015,ERI,Eritrea,NZL,New Zealand,1
+2015,SOM,Somalia,DEU,Germany,49
+2015,SYR,Syrian Arab Rep.,GBR,United Kingdom of Great Britain and Northern Ireland,2721
+2015,IRQ,Iraq,FIN,Finland,5
+2015,COD,Dem. Rep. of the Congo,CAN,Canada,447
+2015,AFG,Afghanistan,GBR,United Kingdom of Great Britain and Northern Ireland,1
+2015,IRQ,Iraq,AUS,Australia,1337
+2015,SDN,Sudan,AUS,Australia,12
+2015,AFG,Afghanistan,NLD,Netherlands,1
+2015,COD,Dem. Rep. of the Congo,SWE,Sweden,144
+2015,ERI,Eritrea,FRA,France,37
+2015,AFG,Afghanistan,DNK,Denmark,21
+2015,SYR,Syrian Arab Rep.,NLD,Netherlands,347
+2015,ERI,Eritrea,SWE,Sweden,134
+2015,AFG,Afghanistan,FRA,France,7
+2015,COD,Dem. Rep. of the Congo,NLD,Netherlands,50
+2015,SYR,Syrian Arab Rep.,SWE,Sweden,707
+2015,ERI,Eritrea,ITA,Italy,64
+2015,AFG,Afghanistan,FIN,Finland,215
+2015,SOM,Somalia,CAN,Canada,74
+2015,SYR,Syrian Arab Rep.,AUS,Australia,5317
+2015,IRQ,Iraq,FRA,France,10
+2015,COD,Dem. Rep. of the Congo,BEL,Belgium,14
+2015,IRQ,Iraq,NZL,New Zealand,46
+2015,SDN,Sudan,NOR,Norway,21
+2015,BTN,Bhutan,USA,United States of America,3952
+2015,AFG,Afghanistan,USA,United States of America,3308
+2015,IRN,Iran (Islamic Rep. of),USA,United States of America,2248
+2015,MMR,Myanmar,SWE,Sweden,5
+2015,IRN,Iran (Islamic Rep. of),DNK,Denmark,4
+2015,SYR,Syrian Arab Rep.,FRA,France,1315
+2015,IRN,Iran (Islamic Rep. of),FRA,France,9
+2015,IRN,Iran (Islamic Rep. of),CAN,Canada,484
+2015,SOM,Somalia,DNK,Denmark,17
+2015,ERI,Eritrea,FIN,Finland,4
+2015,IRQ,Iraq,DNK,Denmark,5
+2015,COD,Dem. Rep. of the Congo,DNK,Denmark,171
+2015,ERI,Eritrea,USA,United States of America,2968
+2015,MMR,Myanmar,NZL,New Zealand,446
+2015,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,149
+2015,SDN,Sudan,SWE,Sweden,42
+2015,BTN,Bhutan,CAN,Canada,154
+2015,AFG,Afghanistan,CAN,Canada,71
+2015,IRQ,Iraq,USA,United States of America,7304
+2015,IRN,Iran (Islamic Rep. of),NOR,Norway,21
+2015,SOM,Somalia,SWE,Sweden,80
+2015,SYR,Syrian Arab Rep.,PRT,Portugal,20
+2015,IRQ,Iraq,CHE,Switzerland,119
+2015,MMR,Myanmar,USA,United States of America,8106
+2015,COD,Dem. Rep. of the Congo,USA,United States of America,19048
+2015,SOM,Somalia,FIN,Finland,20
+2015,SDN,Sudan,NLD,Netherlands,4
+2015,SYR,Syrian Arab Rep.,CHE,Switzerland,454
+2015,COD,Dem. Rep. of the Congo,NOR,Norway,32
+2015,ERI,Eritrea,DEU,Germany,234
+2015,MMR,Myanmar,CAN,Canada,55
+2015,SYR,Syrian Arab Rep.,AUT,Austria,612
+2015,SDN,Sudan,PRT,Portugal,5
+2015,BTN,Bhutan,AUS,Australia,214
+2015,SOM,Somalia,NZL,New Zealand,172
+2015,SDN,Sudan,FRA,France,17
+2015,IRQ,Iraq,DEU,Germany,28
+2015,IRN,Iran (Islamic Rep. of),FIN,Finland,14
+2015,SOM,Somalia,AUS,Australia,28
+2015,SYR,Syrian Arab Rep.,BEL,Belgium,504
+2015,IRQ,Iraq,ITA,Italy,59
+2015,MMR,Myanmar,AUS,Australia,1029
+2015,SDN,Sudan,USA,United States of America,3793
+2015,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,184
+2015,IRQ,Iraq,SWE,Sweden,124
+2015,SYR,Syrian Arab Rep.,ITA,Italy,369
+2015,COD,Dem. Rep. of the Congo,FRA,France,21
+2015,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,31
+2015,SDN,Sudan,NZL,New Zealand,5
+2015,SYR,Syrian Arab Rep.,CZE,Czechia,205
+2015,SDN,Sudan,DNK,Denmark,15
+2015,BTN,Bhutan,NZL,New Zealand,156
+2016,SYR,Syrian Arab Rep.,DNK,Denmark,5
+2016,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,255
+2016,SYR,Syrian Arab Rep.,LTU,Lithuania,85
+2016,IRN,Iran (Islamic Rep. of),USA,United States of America,1847
+2016,IRQ,Iraq,DNK,Denmark,8
+2016,MMR,Myanmar,JPN,Japan,49
+2016,SYR,Syrian Arab Rep.,AUS,Australia,431
+2016,AFG,Afghanistan,SWE,Sweden,180
+2016,ERI,Eritrea,SWE,Sweden,194
+2016,IRQ,Iraq,CZE,Czechia,2
+2016,SOM,Somalia,USA,United States of America,10002
+2016,MMR,Myanmar,DNK,Denmark,1
+2016,COD,Dem. Rep. of the Congo,AUS,Australia,309
+2016,IRN,Iran (Islamic Rep. of),AUS,Australia,171
+2016,SYR,Syrian Arab Rep.,DEU,Germany,2205
+2016,SOM,Somalia,NOR,Norway,14
+2016,SYR,Syrian Arab Rep.,LUX,Luxembourg,164
+2016,COD,Dem. Rep. of the Congo,FRA,France,31
+2016,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,371
+2016,BTN,Bhutan,AUS,Australia,412
+2016,SYR,Syrian Arab Rep.,CAN,Canada,16892
+2016,MMR,Myanmar,AUS,Australia,1223
+2016,IRQ,Iraq,FRA,France,15
+2016,ERI,Eritrea,AUS,Australia,207
+2016,MMR,Myanmar,KOR,Rep. of Korea,43
+2016,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,234
+2016,IRN,Iran (Islamic Rep. of),NZL,New Zealand,11
+2016,SYR,Syrian Arab Rep.,ISL,Iceland,61
+2016,SOM,Somalia,SWE,Sweden,254
+2016,SYR,Syrian Arab Rep.,LVA,Latvia,53
+2016,AFG,Afghanistan,CAN,Canada,260
+2016,IRQ,Iraq,ITA,Italy,8
+2016,BTN,Bhutan,CAN,Canada,38
+2016,SYR,Syrian Arab Rep.,FIN,Finland,997
+2016,MMR,Myanmar,NOR,Norway,3
+2016,IRQ,Iraq,IRL,Ireland,11
+2016,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,34
+2016,AFG,Afghanistan,DNK,Denmark,1
+2016,COD,Dem. Rep. of the Congo,NOR,Norway,33
+2016,IRQ,Iraq,NZL,New Zealand,19
+2016,COD,Dem. Rep. of the Congo,SWE,Sweden,439
+2016,MMR,Myanmar,CAN,Canada,39
+2016,SYR,Syrian Arab Rep.,IRL,Ireland,314
+2016,SDN,Sudan,AUS,Australia,11
+2016,SYR,Syrian Arab Rep.,MLT,Malta,6
+2016,ERI,Eritrea,NOR,Norway,9
+2016,IRQ,Iraq,SWE,Sweden,109
+2016,BTN,Bhutan,NOR,Norway,4
+2016,SYR,Syrian Arab Rep.,GBR,United Kingdom of Great Britain and Northern Ireland,7476
+2016,MMR,Myanmar,USA,United States of America,8200
+2016,IRQ,Iraq,NLD,Netherlands,32
+2016,IRQ,Iraq,AUS,Australia,912
+2016,AFG,Afghanistan,GBR,United Kingdom of Great Britain and Northern Ireland,25
+2016,AFG,Afghanistan,USA,United States of America,2095
+2016,MMR,Myanmar,NZL,New Zealand,512
+2016,SYR,Syrian Arab Rep.,MCO,Monaco,4
+2016,SDN,Sudan,CAN,Canada,76
+2016,SYR,Syrian Arab Rep.,PRT,Portugal,46
+2016,IRN,Iran (Islamic Rep. of),CAN,Canada,11
+2016,SYR,Syrian Arab Rep.,AUT,Austria,229
+2016,COD,Dem. Rep. of the Congo,USA,United States of America,20962
+2016,BTN,Bhutan,NZL,New Zealand,24
+2016,SYR,Syrian Arab Rep.,NLD,Netherlands,1190
+2016,AFG,Afghanistan,AUS,Australia,768
+2016,IRQ,Iraq,CHE,Switzerland,187
+2016,IRQ,Iraq,CAN,Canada,375
+2016,SYR,Syrian Arab Rep.,BGR,Bulgaria,41
+2016,SYR,Syrian Arab Rep.,EST,Estonia,66
+2016,COD,Dem. Rep. of the Congo,DNK,Denmark,19
+2016,MMR,Myanmar,SWE,Sweden,9
+2016,SYR,Syrian Arab Rep.,ESP,Spain,711
+2016,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,222
+2016,SOM,Somalia,AUS,Australia,73
+2016,SYR,Syrian Arab Rep.,ROU,Romania,15
+2016,SOM,Somalia,NZL,New Zealand,96
+2016,SYR,Syrian Arab Rep.,ITA,Italy,1094
+2016,ERI,Eritrea,USA,United States of America,2641
+2016,BTN,Bhutan,USA,United States of America,4929
+2016,SYR,Syrian Arab Rep.,SWE,Sweden,1012
+2016,AFG,Afghanistan,NOR,Norway,9
+2016,SDN,Sudan,NZL,New Zealand,8
+2016,IRQ,Iraq,USA,United States of America,10769
+2016,SOM,Somalia,CAN,Canada,51
+2016,SYR,Syrian Arab Rep.,HRV,Croatia,35
+2016,SDN,Sudan,DNK,Denmark,12
+2016,SYR,Syrian Arab Rep.,NZL,New Zealand,421
+2016,SYR,Syrian Arab Rep.,CHE,Switzerland,866
+2016,SDN,Sudan,SWE,Sweden,24
+2016,SYR,Syrian Arab Rep.,FRA,France,4280
+2016,SDN,Sudan,NOR,Norway,8
+2016,SYR,Syrian Arab Rep.,NOR,Norway,3581
+2016,COD,Dem. Rep. of the Congo,CAN,Canada,797
+2016,AFG,Afghanistan,FRA,France,2
+2016,SYR,Syrian Arab Rep.,USA,United States of America,34469
+2016,AFG,Afghanistan,NZL,New Zealand,30
+2016,SYR,Syrian Arab Rep.,BEL,Belgium,396
+2016,SOM,Somalia,DNK,Denmark,11
+2016,SYR,Syrian Arab Rep.,HUN,Hungary,4
+2016,SDN,Sudan,FRA,France,6
+2016,ERI,Eritrea,AUT,Austria,2
+2016,AFG,Afghanistan,AUT,Austria,4
+2016,SDN,Sudan,USA,United States of America,5074
+2016,IRN,Iran (Islamic Rep. of),AUT,Austria,4
+2016,ERI,Eritrea,FRA,France,106
+2016,IRQ,Iraq,NOR,Norway,13
+2016,ERI,Eritrea,CAN,Canada,366
+2016,SDN,Sudan,FIN,Finland,1
+2016,IRN,Iran (Islamic Rep. of),FRA,France,8
+2016,ERI,Eritrea,NZL,New Zealand,3
+2016,SYR,Syrian Arab Rep.,CZE,Czechia,105
+2017,SYR,Syrian Arab Rep.,HRV,Croatia,157
+2017,SDN,Sudan,CAN,Canada,245
+2017,COD,Dem. Rep. of the Congo,CAN,Canada,128
+2017,IRN,Iran (Islamic Rep. of),FIN,Finland,1
+2017,IRN,Iran (Islamic Rep. of),USA,United States of America,627
+2017,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,42
+2017,SYR,Syrian Arab Rep.,ROU,Romania,48
+2017,ERI,Eritrea,USA,United States of America,999
+2017,IRQ,Iraq,MCO,Monaco,30
+2017,SOM,Somalia,CAN,Canada,356
+2017,SDN,Sudan,FIN,Finland,20
+2017,SYR,Syrian Arab Rep.,AUT,Austria,253
+2017,MMR,Myanmar,CAN,Canada,102
+2017,SYR,Syrian Arab Rep.,SWE,Sweden,2875
+2017,ERI,Eritrea,NLD,Netherlands,2
+2017,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,650
+2017,BTN,Bhutan,AUS,Australia,1
+2017,BTN,Bhutan,USA,United States of America,138
+2017,SYR,Syrian Arab Rep.,ITA,Italy,1062
+2017,IRQ,Iraq,SWE,Sweden,56
+2017,SDN,Sudan,DEU,Germany,125
+2017,IRQ,Iraq,AUS,Australia,47
+2017,SYR,Syrian Arab Rep.,ESP,Spain,1369
+2017,COD,Dem. Rep. of the Congo,USA,United States of America,9759
+2017,IRQ,Iraq,NZL,New Zealand,53
+2017,SOM,Somalia,NLD,Netherlands,7
+2017,AFG,Afghanistan,FRA,France,2
+2017,SYR,Syrian Arab Rep.,BEL,Belgium,1357
+2017,MMR,Myanmar,KOR,Rep. of Korea,42
+2017,SOM,Somalia,USA,United States of America,1237
+2017,SDN,Sudan,CHE,Switzerland,9
+2017,IRQ,Iraq,USA,United States of America,1698
+2017,AFG,Afghanistan,SWE,Sweden,308
+2017,IRQ,Iraq,ISL,Iceland,36
+2017,SYR,Syrian Arab Rep.,FIN,Finland,664
+2017,SOM,Somalia,FIN,Finland,14
+2017,SYR,Syrian Arab Rep.,LTU,Lithuania,191
+2017,IRQ,Iraq,NLD,Netherlands,9
+2017,ERI,Eritrea,DEU,Germany,14
+2017,IRQ,Iraq,DEU,Germany,10
+2017,SYR,Syrian Arab Rep.,SVN,Slovenia,67
+2017,COD,Dem. Rep. of the Congo,SWE,Sweden,888
+2017,IRQ,Iraq,IRL,Ireland,5
+2017,SDN,Sudan,NLD,Netherlands,7
+2017,AFG,Afghanistan,FIN,Finland,11
+2017,SYR,Syrian Arab Rep.,CAN,Canada,1327
+2017,MMR,Myanmar,NOR,Norway,5
+2017,SDN,Sudan,SWE,Sweden,177
+2017,IRQ,Iraq,CHE,Switzerland,1
+2017,SYR,Syrian Arab Rep.,USA,United States of America,3942
+2017,IRN,Iran (Islamic Rep. of),NZL,New Zealand,10
+2017,SYR,Syrian Arab Rep.,LUX,Luxembourg,216
+2017,ERI,Eritrea,FRA,France,35
+2017,SDN,Sudan,PRT,Portugal,6
+2017,IRQ,Iraq,LUX,Luxembourg,2
+2017,SDN,Sudan,FRA,France,325
+2017,SOM,Somalia,NOR,Norway,9
+2017,SYR,Syrian Arab Rep.,ARG,Argentina,105
+2017,SDN,Sudan,BEL,Belgium,1
+2017,AFG,Afghanistan,NLD,Netherlands,1
+2017,SYR,Syrian Arab Rep.,CYP,Cyprus,6
+2017,MMR,Myanmar,NZL,New Zealand,177
+2017,MMR,Myanmar,SWE,Sweden,5
+2017,SYR,Syrian Arab Rep.,NOR,Norway,3002
+2017,IRN,Iran (Islamic Rep. of),FRA,France,1
+2017,AFG,Afghanistan,GBR,United Kingdom of Great Britain and Northern Ireland,96
+2017,MMR,Myanmar,JPN,Japan,39
+2017,SYR,Syrian Arab Rep.,LVA,Latvia,65
+2017,ERI,Eritrea,ITA,Italy,270
+2017,IRN,Iran (Islamic Rep. of),DEU,Germany,4
+2017,IRQ,Iraq,NOR,Norway,8
+2017,AFG,Afghanistan,AUS,Australia,826
+2017,SOM,Somalia,SWE,Sweden,369
+2017,SYR,Syrian Arab Rep.,IRL,Ireland,303
+2017,IRN,Iran (Islamic Rep. of),CAN,Canada,64
+2017,SOM,Somalia,FRA,France,125
+2017,SYR,Syrian Arab Rep.,EST,Estonia,143
+2017,MMR,Myanmar,USA,United States of America,4661
+2017,SDN,Sudan,USA,United States of America,887
+2017,ERI,Eritrea,NZL,New Zealand,2
+2017,IRN,Iran (Islamic Rep. of),GBR,United Kingdom of Great Britain and Northern Ireland,40
+2017,SOM,Somalia,NZL,New Zealand,20
+2017,SYR,Syrian Arab Rep.,MLT,Malta,11
+2017,COD,Dem. Rep. of the Congo,NLD,Netherlands,182
+2017,SDN,Sudan,NOR,Norway,19
+2017,SOM,Somalia,DEU,Germany,8
+2017,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,267
+2017,ERI,Eritrea,CAN,Canada,529
+2017,AFG,Afghanistan,CAN,Canada,57
+2017,SYR,Syrian Arab Rep.,CHL,Chile,95
+2017,IRQ,Iraq,CAN,Canada,401
+2017,AFG,Afghanistan,NZL,New Zealand,28
+2017,SYR,Syrian Arab Rep.,FRA,France,4207
+2017,SOM,Somalia,AUS,Australia,171
+2017,COD,Dem. Rep. of the Congo,AUS,Australia,1306
+2017,COD,Dem. Rep. of the Congo,NZL,New Zealand,3
+2017,IRN,Iran (Islamic Rep. of),LUX,Luxembourg,1
+2017,SYR,Syrian Arab Rep.,NZL,New Zealand,678
+2017,SYR,Syrian Arab Rep.,NLD,Netherlands,2835
+2017,COD,Dem. Rep. of the Congo,FRA,France,27
+2017,COD,Dem. Rep. of the Congo,NOR,Norway,31
+2017,ERI,Eritrea,NOR,Norway,8
+2017,ERI,Eritrea,PRT,Portugal,1
+2017,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,460
+2017,IRN,Iran (Islamic Rep. of),AUS,Australia,28
+2017,ERI,Eritrea,SWE,Sweden,655
+2017,SYR,Syrian Arab Rep.,CHE,Switzerland,1307
+2017,IRQ,Iraq,FIN,Finland,5
+2017,AFG,Afghanistan,NOR,Norway,3
+2017,SYR,Syrian Arab Rep.,GBR,United Kingdom of Great Britain and Northern Ireland,7072
+2017,SYR,Syrian Arab Rep.,DEU,Germany,3652
+2017,SDN,Sudan,AUS,Australia,43
+2017,COD,Dem. Rep. of the Congo,BEL,Belgium,169
+2017,IRN,Iran (Islamic Rep. of),NOR,Norway,1
+2017,IRN,Iran (Islamic Rep. of),NLD,Netherlands,3
+2017,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,263
+2017,SYR,Syrian Arab Rep.,PRT,Portugal,221
+2017,COD,Dem. Rep. of the Congo,FIN,Finland,180
+2017,IRQ,Iraq,ITA,Italy,4
+2017,ERI,Eritrea,AUS,Australia,386
+2017,ERI,Eritrea,FIN,Finland,4
+2017,SOM,Somalia,PRT,Portugal,1
+2017,SYR,Syrian Arab Rep.,AUS,Australia,81
+2017,MMR,Myanmar,AUS,Australia,315
+2017,AFG,Afghanistan,USA,United States of America,840
+2017,SYR,Syrian Arab Rep.,ISL,Iceland,21
+2017,IRQ,Iraq,FRA,France,25
+2017,IRN,Iran (Islamic Rep. of),SWE,Sweden,5
+2018,ERI,Eritrea,SWE,Sweden,706
+2018,ERI,Eritrea,BEL,Belgium,34
+2018,IRN,Iran (Islamic Rep. of),GBR,United Kingdom of Great Britain and Northern Ireland,24
+2018,IRQ,Iraq,NLD,Netherlands,12
+2018,SDN,Sudan,FRA,France,807
+2018,AFG,Afghanistan,FRA,France,12
+2018,COD,Dem. Rep. of the Congo,AUS,Australia,2377
+2018,MMR,Myanmar,KOR,Rep. of Korea,78
+2018,SYR,Syrian Arab Rep.,BEL,Belgium,1086
+2018,COD,Dem. Rep. of the Congo,USA,United States of America,15688
+2018,SDN,Sudan,FIN,Finland,12
+2018,COD,Dem. Rep. of the Congo,FRA,France,19
+2018,IRQ,Iraq,BEL,Belgium,1
+2018,SYR,Syrian Arab Rep.,LTU,Lithuania,13
+2018,SOM,Somalia,AUS,Australia,14
+2018,SYR,Syrian Arab Rep.,LVA,Latvia,4
+2018,SYR,Syrian Arab Rep.,NZL,New Zealand,240
+2018,SOM,Somalia,NOR,Norway,5
+2018,BTN,Bhutan,USA,United States of America,2
+2018,IRN,Iran (Islamic Rep. of),ITA,Italy,3
+2018,AFG,Afghanistan,NZL,New Zealand,206
+2018,IRQ,Iraq,NZL,New Zealand,9
+2018,AFG,Afghanistan,NLD,Netherlands,1
+2018,COD,Dem. Rep. of the Congo,NOR,Norway,1211
+2018,SOM,Somalia,NZL,New Zealand,18
+2018,SYR,Syrian Arab Rep.,BGR,Bulgaria,66
+2018,COD,Dem. Rep. of the Congo,FIN,Finland,142
+2018,SOM,Somalia,FRA,France,71
+2018,IRQ,Iraq,CAN,Canada,1049
+2018,SDN,Sudan,CHE,Switzerland,5
+2018,SYR,Syrian Arab Rep.,NLD,Netherlands,2383
+2018,ERI,Eritrea,AUS,Australia,202
+2018,ERI,Eritrea,NOR,Norway,53
+2018,BTN,Bhutan,AUS,Australia,1
+2018,IRN,Iran (Islamic Rep. of),NOR,Norway,4
+2018,MMR,Myanmar,SWE,Sweden,2
+2018,MMR,Myanmar,AUS,Australia,295
+2018,AFG,Afghanistan,FIN,Finland,8
+2018,SOM,Somalia,CAN,Canada,2130
+2018,IRQ,Iraq,IRL,Ireland,5
+2018,SYR,Syrian Arab Rep.,EST,Estonia,88
+2018,COD,Dem. Rep. of the Congo,SWE,Sweden,458
+2018,ERI,Eritrea,DEU,Germany,281
+2018,SYR,Syrian Arab Rep.,CAN,Canada,5508
+2018,SDN,Sudan,ITA,Italy,29
+2018,ERI,Eritrea,ITA,Italy,10
+2018,SYR,Syrian Arab Rep.,PRT,Portugal,266
+2018,SDN,Sudan,AUS,Australia,7
+2018,IRQ,Iraq,SWE,Sweden,74
+2018,IRQ,Iraq,FRA,France,17
+2018,IRN,Iran (Islamic Rep. of),SWE,Sweden,21
+2018,IRN,Iran (Islamic Rep. of),FRA,France,1
+2018,AFG,Afghanistan,NOR,Norway,3
+2018,SDN,Sudan,SWE,Sweden,254
+2018,SYR,Syrian Arab Rep.,ISL,Iceland,61
+2018,SYR,Syrian Arab Rep.,FIN,Finland,628
+2018,COD,Dem. Rep. of the Congo,NLD,Netherlands,190
+2018,SOM,Somalia,DEU,Germany,47
+2018,SYR,Syrian Arab Rep.,FRA,France,2943
+2018,SYR,Syrian Arab Rep.,NOR,Norway,1212
+2018,SDN,Sudan,NOR,Norway,128
+2018,SYR,Syrian Arab Rep.,ESP,Spain,1125
+2018,SOM,Somalia,GBR,United Kingdom of Great Britain and Northern Ireland,295
+2018,AFG,Afghanistan,USA,United States of America,2748
+2018,AFG,Afghanistan,AUS,Australia,68
+2018,IRQ,Iraq,GBR,United Kingdom of Great Britain and Northern Ireland,563
+2018,ERI,Eritrea,MLT,Malta,5
+2018,COD,Dem. Rep. of the Congo,NZL,New Zealand,106
+2018,ERI,Eritrea,CAN,Canada,249
+2018,SYR,Syrian Arab Rep.,IRL,Ireland,389
+2018,SYR,Syrian Arab Rep.,GBR,United Kingdom of Great Britain and Northern Ireland,4079
+2018,COD,Dem. Rep. of the Congo,CAN,Canada,1450
+2018,ERI,Eritrea,NLD,Netherlands,53
+2018,SYR,Syrian Arab Rep.,SWE,Sweden,2151
+2018,COD,Dem. Rep. of the Congo,GBR,United Kingdom of Great Britain and Northern Ireland,163
+2018,SYR,Syrian Arab Rep.,USA,United States of America,85
+2018,IRN,Iran (Islamic Rep. of),NLD,Netherlands,3
+2018,AFG,Afghanistan,SWE,Sweden,442
+2018,IRN,Iran (Islamic Rep. of),AUS,Australia,9
+2018,IRQ,Iraq,PRT,Portugal,108
+2018,ERI,Eritrea,PRT,Portugal,11
+2018,SOM,Somalia,NLD,Netherlands,28
+2018,IRN,Iran (Islamic Rep. of),CAN,Canada,253
+2018,SDN,Sudan,GBR,United Kingdom of Great Britain and Northern Ireland,384
+2018,SYR,Syrian Arab Rep.,DEU,Germany,3928
+2018,MMR,Myanmar,CAN,Canada,294
+2018,SDN,Sudan,USA,United States of America,511
+2018,ERI,Eritrea,CHE,Switzerland,69
+2018,SOM,Somalia,CHE,Switzerland,10
+2018,AFG,Afghanistan,CAN,Canada,325
+2018,COD,Dem. Rep. of the Congo,ISL,Iceland,3
+2018,SDN,Sudan,NLD,Netherlands,118
+2018,IRQ,Iraq,NOR,Norway,10
+2018,ERI,Eritrea,NZL,New Zealand,174
+2018,IRQ,Iraq,AUS,Australia,15
+2018,IRQ,Iraq,USA,United States of America,975
+2018,SOM,Somalia,PRT,Portugal,5
+2018,ERI,Eritrea,FIN,Finland,57
+2018,ERI,Eritrea,USA,United States of America,1886
+2018,SYR,Syrian Arab Rep.,CHE,Switzerland,1052
+2018,SYR,Syrian Arab Rep.,HRV,Croatia,330
+2018,MMR,Myanmar,NZL,New Zealand,79
+2018,SOM,Somalia,SWE,Sweden,184
+2018,SOM,Somalia,USA,United States of America,242
+2018,SOM,Somalia,BEL,Belgium,12
+2018,AFG,Afghanistan,GBR,United Kingdom of Great Britain and Northern Ireland,182
+2018,SDN,Sudan,ISL,Iceland,2
+2018,ERI,Eritrea,FRA,France,323
+2018,ERI,Eritrea,GBR,United Kingdom of Great Britain and Northern Ireland,175
+2018,IRN,Iran (Islamic Rep. of),USA,United States of America,173
+2018,MMR,Myanmar,JPN,Japan,37
+2018,SYR,Syrian Arab Rep.,AUS,Australia,59
+2018,SDN,Sudan,PRT,Portugal,45
+2018,SOM,Somalia,FIN,Finland,5
+2018,SDN,Sudan,CAN,Canada,605
+2018,SYR,Syrian Arab Rep.,ARG,Argentina,9
+2018,SYR,Syrian Arab Rep.,ITA,Italy,484
+2018,MMR,Myanmar,USA,United States of America,2165
