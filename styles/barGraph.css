@@ -69,7 +69,8 @@ html,
     /* z-index: 1 */
   }
   .container div {
-    height: 100%;
+    /* uncomment this for scrollytext */
+    /* height: 100%; */ 
     display: block;
     padding: 0 45px;
   }

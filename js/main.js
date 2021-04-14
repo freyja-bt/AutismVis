@@ -7,6 +7,10 @@ blue2 = "#a9d6e5"
 gray1 = "#dee2e6"
 gray0 = "#343a40"
 
+
+currVis = 0
+totalVis = 5
+
 var svg = d3.select(".fixed").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -131,16 +135,12 @@ function servicesCliffVis() {
 
     showUnits()
 
-    d3.select("#changeVis").on("click", function () {
-        console.log("clicked");
-        showUnits(27)
-    })
+    // d3.select("#nextVis").on("click", function () {
+    //     console.log("clicked");
+    //     //showUnits(27)
+    // })
 
-    d3.select("#updateServiceType").on("change", function (d) {
-        let selectedServiceType = d3.select(this).property("value")
-        console.log(selectedServiceType);
-        showUnits(serviceAvailability[selectedServiceType])
-    })
+    
 
 
 
@@ -294,18 +294,49 @@ d3.csv("data/P2PData.csv", function (dataSet) {
     console.log(ageData);
 
     servicesCliffVis()
-    new scroll('div1', '50%', showNoServices, servicesCliffVis);
-    new scroll('div2', '50%', showSpeechTherapyServicesBefore, showNoServices);
-    new scroll('div3', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
+    // new scroll('div1', '50%', showNoServices, servicesCliffVis);
+    // new scroll('div2', '50%', showSpeechTherapyServicesBefore, showNoServices);
+    // new scroll('div3', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
+    // new scroll('div4', '50%', exploreServices, showSpeechTherapyServicesAfter);
 
-    // new scroll('div2', '75%', servicesCliffVis, dummyfunction);
-    // new scroll('div2', '75%', showVis2, showVis1);
-    // new scroll('div3', '75%', showVis3, showVis2);
-    // new scroll('div4', '75%', scrollYear2014, showVis3);
-    // new scroll('div5', '75%', scrollYear2015, scrollYear2014);
+    
+
+    d3.select("#nextVis").on("click", function(){
+        console.log("next")
+        currVis = currVis + 1
+        updateCurrVis(currVis)
+    })
+    d3.select("#prevVis").on("click", function(){
+        currVis = currVis - 1
+        updateCurrVis(currVis)
+    })
 })
 
+function updateCurrVis(){
+    d3.select("#div" + currVis).style("display", "block")
+    for(let vis = 0; vis < totalVis; vis++){
+        if(vis != currVis){
+            d3.select("#div" + vis).style("display", "none")
+        }
+    }
 
+
+    if(currVis == 0){
+        servicesCliffVis()
+    }
+    else if(currVis == 1){
+        showNoServices()
+    }
+    else if(currVis == 2){
+        showSpeechTherapyServicesBefore()
+    }
+    else if(currVis == 3){
+        showSpeechTherapyServicesAfter()
+    }
+    else if(currVis == 4){
+        exploreServices()
+    }
+}
 function showNoServices() {
     showUnits(service = null, ratio = (100 - 26))
 }
@@ -315,6 +346,23 @@ function showSpeechTherapyServicesBefore() {
 }
 function showSpeechTherapyServicesAfter() {
     showUnitsAfter(serviceAvailability['Speech-language therapy'])
+    d3.select("#updateServiceType").style("display", "none");
+}
+function exploreServices(){
+    unitNodes.forEach((d) => { d.class = '' })
+    showUnits()
+    d3.select("#updateServiceType").style("display", "block");
+
+    d3.select("#updateServiceType").on("change", function (d) {
+        let selectedServiceType = d3.select(this).property("value")
+        console.log(selectedServiceType);
+        //showUnits(serviceAvailability[selectedServiceType])
+        showUnitsBefore(serviceAvailability[selectedServiceType])
+        setTimeout(() => {
+            showUnitsAfter(serviceAvailability[selectedServiceType])
+        }, 1000);
+    })
+
 }
 
 var simulation;
