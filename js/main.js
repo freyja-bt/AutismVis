@@ -1,5 +1,5 @@
-var margin = { top: 150, right: 150, bottom: 150, left: 150 },
-    width = window.innerWidth - margin.left - margin.right,
+var margin = { top: 50, right: 50, bottom: 50, left: 50 },
+    width = 0.6*(window.innerWidth - margin.left - margin.right),
     height = window.innerHeight - margin.top - margin.bottom;
 
 blue1 = "#0096c7"
@@ -30,9 +30,9 @@ var tool_tip = d3.tip()
 
 
 var serviceAvailability, services
-var totalPopulation = 14637
+var totalPopulation = 14637/10
 
-var cols = 200;
+var cols = 50//200;
 var size = width / cols;
 
 var unitXScale, unitNodes, xAxis, unitYScale, yAxis
@@ -40,7 +40,10 @@ var unitXScale, unitNodes, xAxis, unitYScale, yAxis
 //unit vis for services cliff
 function servicesCliffVis() {
     //TODO: removed unnecessary DOM elements
+    svg.selectAll("*").remove()
 
+    bottomMargin = 100;
+    height2 = height - bottomMargin //leave some space at the bottom
     serviceAvailability = {
         'Speech-language therapy': {
             'before': 66, 'after': 10
@@ -97,7 +100,7 @@ function servicesCliffVis() {
         yStep = Math.floor(i / cols)
         return {
             xPos: unitXScale(i % cols),
-            yPos: height - (Math.floor((i / cols)) * size),
+            yPos: height2 - (Math.floor((i / cols)) * size),
             size: size
         }
     })
@@ -108,7 +111,7 @@ function servicesCliffVis() {
         .scale(unitXScale)
 
     svg.append('g')
-        .attr('transform', 'translate(0,' + (+height) + ')')
+        .attr('transform', 'translate(0,' + (+height2) + ')')
         .call(xAxis)
         .attr('class', 'xAxisUnit')
         .selectAll("text")
@@ -119,7 +122,7 @@ function servicesCliffVis() {
 
     let yScaleRange = totalPopulation / cols * size
 
-    unitYScale = d3.scaleLinear().range([height, height - yScaleRange])
+    unitYScale = d3.scaleLinear().range([height2, height2 - yScaleRange])
     let yScaleUnits = yScaleRange / size
 
     unitYScale.domain([0, yScaleUnits * cols])
@@ -293,11 +296,12 @@ d3.csv("data/P2PData.csv", function (dataSet) {
         .object(p2pDataGA)
     console.log(ageData);
 
-    servicesCliffVis()
-    // new scroll('div1', '50%', showNoServices, servicesCliffVis);
-    // new scroll('div2', '50%', showSpeechTherapyServicesBefore, showNoServices);
-    // new scroll('div3', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
-    // new scroll('div4', '50%', exploreServices, showSpeechTherapyServicesAfter);
+    //servicesCliffVis()
+    new scroll('div1', '50%', servicesCliffVis, showNoServices);
+    new scroll('div2', '50%', showNoServices, servicesCliffVis);
+    new scroll('div3', '50%', showSpeechTherapyServicesBefore, showNoServices);
+    new scroll('div4', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
+    new scroll('div5', '50%', exploreServices, showSpeechTherapyServicesAfter);
 
     
 

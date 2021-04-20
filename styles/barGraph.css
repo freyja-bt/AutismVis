@@ -1,4 +1,13 @@
 
+/* cartogram */
+path {
+  stroke: #000;
+  stroke-width: 1px;
+}
+.states:hover{
+  opacity: .5;
+}
+/* cartogram */
 #mapid { height: 400px; }
 circle {
   fill: orange;
@@ -19,11 +28,12 @@ circle {
   display: none;
 }
 
+/* styling for pixels. TODO: add class. This changes all rectangles
 rect{
     stroke:white;
     stroke-width: 0.5px;
     fill: #343a40
-}
+} */
 
 
 
@@ -59,18 +69,18 @@ html,
   .container {
     height: 100%;
     max-width: 600px;
-    width: 100%;
+    /* width: 100%; */
     margin: 0;
     padding: 0;
     position: absolute;
     height: 100%;
     line-height: 1.5;
-    left:35%;
+    left:65%;
     /* z-index: 1 */
   }
   .container div {
     /* uncomment this for scrollytext */
-    /* height: 100%; */ 
+    height: 100%; 
     display: block;
     padding: 0 45px;
   }
@@ -109,12 +119,11 @@ html,
 
 
   .d3-tip {
-    line-height: 1;
-    padding: 6px;
-    background: rgba(0, 0, 0, 0.8);
+    line-height: 1.5;
+    padding: 12px;
+    background: rgba(43,43,43, 0.8);
     color: #fff;
-    border-radius: 4px;
-    font-size: 12px;
+    border-radius: 5px;
   }
 
   /* Creates a small triangle extender for the tooltip */

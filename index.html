@@ -11,24 +11,38 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
     <link rel="stylesheet" href="styles/barGraph.css" />
+    <script src="https://unpkg.com/topojson@3"></script>
+
+    
+
+
 </head>
 
 <body>
     <div class="container">
         <!-- class="scrollyText" -->
-        <div id="div0" class = "text">
-            The NLTS2 data covers a population sample that generalizes over 14637 Special Education students with Autism. Each pixel here represents one student.
+        <div id="div0" class="scrollyText">
+            Estimates of prevalence of autism in adults. 
         </div>
-        <div id="div1" class = "text" style= "display: none;">
-            Approximately 26% of young adults on the autism spectrum received no services – services which could help them become employed, continue their education, or live more independently.
+        <!-- <div id="childrenVsAdults" class="scrollyText">
+           
+        </div> -->
+        <div id="div1" class="scrollyText">
+            The NLTS2 data covers a population sample that generalizes over 14637 Special Education students with
+            Autism. Each pixel here represents 10 student.
         </div>
-        <div id="div2" class = "text" style= "display: none;">
-            Frequency of services reduced drastically since high-school. 66% of autistic youths received Speech Language Therapy at the age of 17. 
+        <div id="div2" class="scrollyText" >
+            Approximately 26% of young adults on the autism spectrum received no services – services which could help
+            them become employed, continue their education, or live more independently.
         </div>
-        <div id="div3" class = "text" style= "display: none;">
+        <div id="div3" class="scrollyText" >
+            Frequency of services reduced drastically since high-school. 66% of autistic youths received Speech Language
+            Therapy at the age of 17.
+        </div>
+        <div id="div4" class="scrollyText" >
             Only 10% received it since high-school. 56% of the youth no longer received Speech Language Therapy.
         </div>
-        <div id="div4" class = "text" style= "display: none;">
+        <div id="div5" class="scrollyText" >
             Explore for other services
         </div>
         <!-- <div id="div5">
@@ -37,22 +51,31 @@
 
 
     </div>
+    
+    <!-- <svg width="960", height="600" id="cartogram"></svg> -->
+
     <div class="fixed">
-        <button id="prevVis">Prev</button>
-        <button id="nextVis">Next</button>
+        <button id = "showCartogram">Cartogram</button>
+        <!-- <button id="prevVis">Prev</button>
+        <button id="nextVis">Next</button> -->
         <select id="updateServiceType" style="display:none">
             <option value="">Select a Service</option>
         </select>
         <!-- <div id="mapid" style="display:none"></div> -->
     </div>
+
     <footer>
 
     </footer>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
     <script src="js/d3-tip.js"></script>
+    <script src="js/d3-legend.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/prevalence.js"></script>
     <script src="js/slider.js"></script>
 
 </body>
