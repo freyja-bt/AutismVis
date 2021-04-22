@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="styles/barGraph.css" />
     <script src="https://unpkg.com/topojson@3"></script>
 
-    
 
 
 </head>
@@ -21,29 +20,42 @@
 <body>
     <div class="container">
         <!-- class="scrollyText" -->
-        <div id="div0" class="scrollyText">
-            Estimates of prevalence of autism in adults. 
+
+        <div id="childrenVsAdults" class="scrollyText">
+            NSCHS data for 2016 shows about 1.5 million children had autism. Based on this and other data, the estimated
+            number of adults with autism is 5,437,988 in the year 2017.
         </div>
-        <!-- <div id="childrenVsAdults" class="scrollyText">
-           
-        </div> -->
+        <div id="div0" class="scrollyText">
+            Estimates of prevalence of autism in adults. Hover on a state to see the total number of estimated cases and prevalence. <a href="https://link.springer.com/article/10.1007/s10803-020-04494-4" target="_blank">Find more information on the research here</a>
+            <button id="showCartogram">Cartogram</button>
+
+        </div>
+        <div id="zoomGeorgia" class="scrollyText">
+            Georgia
+        </div>
+        <div id="georgiaServices" class = "scrollyText">
+            Services in georgia
+        </div>
         <div id="div1" class="scrollyText">
             The NLTS2 data covers a population sample that generalizes over 14637 Special Education students with
             Autism. Each pixel here represents 10 student.
         </div>
-        <div id="div2" class="scrollyText" >
+        <div id="div2" class="scrollyText">
             Approximately 26% of young adults on the autism spectrum received no services – services which could help
             them become employed, continue their education, or live more independently.
         </div>
-        <div id="div3" class="scrollyText" >
+        <div id="div3" class="scrollyText">
             Frequency of services reduced drastically since high-school. 66% of autistic youths received Speech Language
             Therapy at the age of 17.
         </div>
-        <div id="div4" class="scrollyText" >
+        <div id="div4" class="scrollyText">
             Only 10% received it since high-school. 56% of the youth no longer received Speech Language Therapy.
         </div>
-        <div id="div5" class="scrollyText" >
+        <div id="div5" class="scrollyText">
             Explore for other services
+            <select id="updateServiceType">
+                <option value="">Select a Service</option>
+            </select>
         </div>
         <!-- <div id="div5">
             div5
@@ -51,17 +63,14 @@
 
 
     </div>
-    
+
     <!-- <svg width="960", height="600" id="cartogram"></svg> -->
 
     <div class="fixed">
-        <button id = "showCartogram">Cartogram</button>
         <!-- <button id="prevVis">Prev</button>
         <button id="nextVis">Next</button> -->
-        <select id="updateServiceType" style="display:none">
-            <option value="">Select a Service</option>
-        </select>
-        <!-- <div id="mapid" style="display:none"></div> -->
+        
+        <div id="leafletMap" style="display:none"></div>
     </div>
 
     <footer>
@@ -76,6 +85,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
     <script src="js/main.js"></script>
     <script src="js/prevalence.js"></script>
+    <script src="js/childrenVsAdults.js"></script>
+    <script src="js/georgiaServices.js"></script>
     <script src="js/slider.js"></script>
 
 </body>

@@ -1,3 +1,5 @@
+/* children vs adults */
+
 
 /* cartogram */
 path {
@@ -7,8 +9,17 @@ path {
 .states:hover{
   opacity: .5;
 }
+
+.dorlingStateLabel{
+  font-size: 10px;
+  cursor: pointer;
+}
+path.active{
+  stroke: black;
+}
 /* cartogram */
-#mapid { height: 400px; }
+#leafletMap { width: 960px;
+  height: 700px; }
 circle {
   fill: orange;
 }
@@ -52,7 +63,7 @@ html,
     font-weight: 300;
   }
   svg{
-    padding: 20px;
+    /* padding: 20px; */
   }
  
   strong{

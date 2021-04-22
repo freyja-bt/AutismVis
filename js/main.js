@@ -1,5 +1,5 @@
 var margin = { top: 50, right: 50, bottom: 50, left: 50 },
-    width = 0.6*(window.innerWidth - margin.left - margin.right),
+    width = 0.6 * (window.innerWidth - margin.left - margin.right),
     height = window.innerHeight - margin.top - margin.bottom;
 
 blue1 = "#0096c7"
@@ -7,6 +7,11 @@ blue2 = "#a9d6e5"
 gray1 = "#dee2e6"
 gray0 = "#343a40"
 
+//Autism Providers
+var p2pDataGA
+var ageData
+var prevalenceData
+var us
 
 currVis = 0
 totalVis = 5
@@ -15,6 +20,7 @@ var svg = d3.select(".fixed").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
+    .attr("class", "mainVisGroup")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
@@ -30,7 +36,7 @@ var tool_tip = d3.tip()
 
 
 var serviceAvailability, services
-var totalPopulation = 14637/10
+var totalPopulation = 14637 / 10
 
 var cols = 50//200;
 var size = width / cols;
@@ -39,8 +45,8 @@ var unitXScale, unitNodes, xAxis, unitYScale, yAxis
 
 //unit vis for services cliff
 function servicesCliffVis() {
-    //TODO: removed unnecessary DOM elements
-    svg.selectAll("*").remove()
+    //TODO: removed unnecessary DOM elements]
+
 
     bottomMargin = 100;
     height2 = height - bottomMargin //leave some space at the bottom
@@ -143,7 +149,7 @@ function servicesCliffVis() {
     //     //showUnits(27)
     // })
 
-    
+
 
 
 
@@ -183,7 +189,7 @@ function showUnits(service = null, ratio = null) {
             if (i > unitsToShow) {
                 d.class = 'none'
             }
-            else{
+            else {
                 d.class = ''
             }
         })
@@ -210,20 +216,20 @@ function showUnitsBefore(service = null) {
                 return true;
             }
         })
-        unitNodes.forEach((d,i) => {
-            if (i < unitsBefore){
+        unitNodes.forEach((d, i) => {
+            if (i < unitsBefore) {
                 d.class = 'before'
             }
-            else{
+            else {
                 d.class = 'none'
             }
         })
     }
 
-    svg.selectAll('.unit').filter((d,i) => {return d.class == 'none'})
+    svg.selectAll('.unit').filter((d, i) => { return d.class == 'none' })
         .style('fill', gray1)
 
-    svg.selectAll('.unit').filter((d,i) => {return d.class == 'before'})
+    svg.selectAll('.unit').filter((d, i) => { return d.class == 'before' })
         .style('fill', blue1)
 
 }
@@ -241,6 +247,9 @@ function showUnitsAfter(service = null) {
             if (i > unitsAfter && i < unitsBefore) {
                 d.class = 'after'
             }
+            if(i < unitsAfter){
+                d.class = 'before'
+            }
         })
 
     }
@@ -254,6 +263,12 @@ function showUnitsAfter(service = null) {
         .transition()
         .duration(1000)
         .style("fill", blue2)
+
+    svg.selectAll(".unit")
+        .filter((d, i) => {
+            return d.class == 'before'
+        })
+        .style("fill", blue1)
 }
 
 
@@ -283,61 +298,80 @@ function scroll(n, offset, func1, func2) {
     });
 };
 
-//Autism Providers
-var p2pDataGA
-var ageData
+
+
+// d3.queue()
+//     .defer(d3.json, "data/us.json")
+//     .defer(d3.csv, "data/adult_prevalence.csv", numeric)
+//     .defer(d3.csv, "data/P2PData.csv")
+//     .await(function (error, us, prevalenceData, p2pData) {
 d3.csv("data/P2PData.csv", function (dataSet) {
-    p2pData = dataSet;
-    console.log(p2pData);
+    p2pData = dataSet
+
     p2pDataGA = p2pData.filter(d => { if (d["State"] == "GA") return true; })
     ageData = d3.nest()
         .key(function (d) { return d["Age"] })
         .rollup(function (v) { return v.length })
         .object(p2pDataGA)
-    console.log(ageData);
 
-    //servicesCliffVis()
-    new scroll('div1', '50%', servicesCliffVis, showNoServices);
-    new scroll('div2', '50%', showNoServices, servicesCliffVis);
+    //starts with this
+    childrenVsAdults()
+    
+    new scroll('div0', '50%', drawPrevalenceMap, childrenVsAdults);
+    new scroll('zoomGeorgia', "50%", zoomGeorgia, drawPrevalenceMap)
+    new scroll('georgiaServices', '50%', georgiaServices, drawPrevalenceMap)
+    new scroll('div1', '50%', servicesCliffVisDummy, georgiaServices);
+
+    new scroll('div2', '50%', showNoServices, servicesCliffVisDummy);
     new scroll('div3', '50%', showSpeechTherapyServicesBefore, showNoServices);
     new scroll('div4', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
     new scroll('div5', '50%', exploreServices, showSpeechTherapyServicesAfter);
 
-    
 
-    d3.select("#nextVis").on("click", function(){
+
+    d3.select("#nextVis").on("click", function () {
         console.log("next")
         currVis = currVis + 1
         updateCurrVis(currVis)
     })
-    d3.select("#prevVis").on("click", function(){
+    d3.select("#prevVis").on("click", function () {
         currVis = currVis - 1
         updateCurrVis(currVis)
     })
 })
 
-function updateCurrVis(){
+function servicesCliffVisDummy() {
+    emptySvg()
+    servicesCliffVis()
+}
+function emptySvg() {
+    console.log("emptying svg")
+    svg.selectAll("*").remove();
+    d3.select("#leafletMap").style("display", "none");
+}
+
+function updateCurrVis() {
     d3.select("#div" + currVis).style("display", "block")
-    for(let vis = 0; vis < totalVis; vis++){
-        if(vis != currVis){
+    for (let vis = 0; vis < totalVis; vis++) {
+        if (vis != currVis) {
             d3.select("#div" + vis).style("display", "none")
         }
     }
 
 
-    if(currVis == 0){
+    if (currVis == 0) {
         servicesCliffVis()
     }
-    else if(currVis == 1){
+    else if (currVis == 1) {
         showNoServices()
     }
-    else if(currVis == 2){
+    else if (currVis == 2) {
         showSpeechTherapyServicesBefore()
     }
-    else if(currVis == 3){
+    else if (currVis == 3) {
         showSpeechTherapyServicesAfter()
     }
-    else if(currVis == 4){
+    else if (currVis == 4) {
         exploreServices()
     }
 }
@@ -352,7 +386,7 @@ function showSpeechTherapyServicesAfter() {
     showUnitsAfter(serviceAvailability['Speech-language therapy'])
     d3.select("#updateServiceType").style("display", "none");
 }
-function exploreServices(){
+function exploreServices() {
     unitNodes.forEach((d) => { d.class = '' })
     showUnits()
     d3.select("#updateServiceType").style("display", "block");
@@ -413,6 +447,7 @@ function createStickyNodes(step) {
 
 
 }
+//for sticky nodes
 function updateVis(step) {
     delay = 1500
     setTimeout(() => {
@@ -519,5 +554,13 @@ function donate() {
 }
 
 
-
+function numeric(row) {
+    for (var key in row) {
+        if (key == "Cases" || key == "Prevalence" || key == "FemaleCases" || key == "MaleCases" || key == "FemalePrevalence" || key == "MalePrevalence") {
+            row[key] = +row[key];
+        }
+    }
+    delete row[""];
+    return row;
+}
 
