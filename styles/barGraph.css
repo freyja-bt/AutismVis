@@ -1,3 +1,37 @@
+body {margin:0;}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#title{
+  float: left;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+.main {
+  padding: 16px;
+  margin-top: 35px;
+}
+
 /* children vs adults */
 .populationText{
   font-size: 24px;
@@ -110,7 +144,7 @@ html,
     /* uncomment this for scrollytext */
     height: 100%; 
     display: block;
-    padding: 0 45px;
+    padding: 50px 45px;
   }
   .fixed {
     position: fixed;

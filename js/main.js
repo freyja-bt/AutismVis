@@ -42,6 +42,7 @@ var cols = 50//200;
 var size = width / cols;
 
 var unitXScale, unitNodes, xAxis, unitYScale, yAxis
+var scrollToExplore = false;
 
 //unit vis for services cliff
 function servicesCliffVis() {
@@ -214,6 +215,9 @@ function showUnits(service = null, ratio = null) {
 }
 
 function showUnitsBefore(service = null) {
+    if (scrollToExplore){
+        return;
+    }
     unitVisGroup = svg.select(".unitVisGroup");
     if (service != null) {
         ratioBefore = service['before']
@@ -243,6 +247,9 @@ function showUnitsBefore(service = null) {
 
 }
 function showUnitsAfter(service = null) {
+    if (scrollToExplore){
+        return;
+    }
     unitVisGroup = svg.select(".unitVisGroup");
 
     if (service != null) {
@@ -337,7 +344,16 @@ d3.csv("data/P2PData.csv", function (dataSet) {
     new scroll('div4', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
     new scroll('div5', '50%', exploreServices, showSpeechTherapyServicesAfter);
 
-
+    d3.select("#nlts2Outcomes").on("click", function() {
+        scrollToExplore = true;
+        document.getElementById('div5').scrollIntoView();
+    })
+    d3.select("#providersGA").on("click", function() {
+        document.getElementById('georgiaServices').scrollIntoView();
+    })
+    d3.select("#adultsPrevalence").on("click", function() {
+        document.getElementById('div0').scrollIntoView();
+    })
 
     d3.select("#nextVis").on("click", function () {
         console.log("next")
@@ -389,6 +405,9 @@ function updateCurrVis() {
     }
 }
 function showNoServices() {
+    if (scrollToExplore){
+        return;
+    }
     showUnits(service = null, ratio = (100 - 26))
 }
 function showSpeechTherapyServicesBefore() {
@@ -400,8 +419,14 @@ function showSpeechTherapyServicesAfter() {
     d3.select("#updateServiceType").style("display", "none");
 }
 function exploreServices() {
-    unitNodes.forEach((d) => { d.class = '' })
-    showUnits()
+    //TODO: create from scratch so that direct link works
+    // unitNodes.forEach((d) => { d.class = '' })
+    // showUnits()
+    if (scrollToExplore){
+        scrollToExplore = false;
+    }
+    servicesCliffVis()
+
     d3.select("#updateServiceType").style("display", "block");
 
     d3.select("#updateServiceType").on("change", function (d) {

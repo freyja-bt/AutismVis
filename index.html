@@ -18,67 +18,89 @@
 </head>
 
 <body>
-    <div class="container">
-        <!-- class="scrollyText" -->
+    <div class="navbar">
+        <a id = "title" href="">Autism Services Cliff</a>
+        <a id = "nlts2Outcomes" >NLTS2 Outcomes</a>
+        <a id = "providersGA" >Providers in Georgia</a>
+        <a id = "adultsPrevalence" >Autism Prevalence in Adults</a>
+        
+        
+    </div>
+    <div class="main">
+        <div class="container">
+            <!-- class="scrollyText" -->
 
-        <div id="childrenVsAdults" class="scrollyText">
-            <b>NSCH (National Survey for Children's Health)</b> data for 2016 shows that around 1.5 million children (ages 3-17) had autism in the year 2016. Based on this and other data, the estimated
-            number of adults (ages 18-84) with autism is over 5.4 million in the year 2017.
-        </div>
-        <div id="div0" class="scrollyText">
-            The prevalence estimates were calculated nationwide and for each state in the United States. Hover on a state to see the total number of estimated cases and prevalence. <a href="https://link.springer.com/article/10.1007/s10803-020-04494-4" target="_blank">Find more information on the research here</a>
-            <br>
-            The cartogram view represents each state as a bubble and its size represents the estimated number of adults with Autism.
-            <button id="showCartogram">Cartogram</button>
+            <div id="childrenVsAdults" class="scrollyText">
+                <b>NSCH (National Survey for Children's Health)</b> data for 2016 shows that around 1.5 million children
+                (ages 3-17) had autism in the year 2016. Based on this and other data, the estimated
+                number of adults (ages 18-84) with autism is over 5.4 million in the year 2017.
+            </div>
+            <div id="div0" class="scrollyText">
+                The prevalence estimates were calculated nationwide and for each state in the United States. Hover on a
+                state to see the total number of estimated cases and prevalence. <a
+                    href="https://link.springer.com/article/10.1007/s10803-020-04494-4" target="_blank">Find more
+                    information on the research here</a>
+                <br>
+                The cartogram view represents each state as a bubble and its size represents the estimated number of
+                adults
+                with Autism.
+                <button id="showCartogram">Cartogram</button>
 
-        </div>
-        <div id="zoomGeorgia" class="scrollyText">
-            Let's look at the providers of Autism services in Georgia. The data is collected from <a href="https://www.p2pga.org/">Parent to Parent of Georgia</a>. The colors reprsent the number of providers in each county. Dekalb, and nearby counties have the maximum number of providers. A geographical disparity of services between North and South Georgia is evident.
-        </div>
-        <div id="georgiaServices" class = "scrollyText">
-            Locations of providers in Georgia. 
-        </div>
-        <div id="div1" class="scrollyText">
-            The <a href="https://nlts2.sri.com/index.html">NLTS2</a> (National Longitudinal Transitional Study 2) data covers a population sample that represents over 14,000 Autistc youths who received Special Education.
-            Each pixel here represents 10 students.
-        </div>
-        <div id="div2" class="scrollyText">
-            Approximately 26% of young adults on the autism spectrum received no services – services which could help
-            them become employed, continue their education, or live more independently.
-        </div>
-        <div id="div3" class="scrollyText">
-            Frequency of services reduced drastically since high-school. 66% of autistic youths received Speech Language
-            Therapy at the age of 17.
-        </div>
-        <div id="div4" class="scrollyText">
-            Only 10% received it since high-school. 56% of the youth no longer received Speech Language Therapy.
-        </div>
-        <div id="div5" class="scrollyText">
-            Explore other services
-            <br>
-            <select id="updateServiceType">
-                <option value="">Select a Service</option>
-            </select>
-        </div>
-        <!-- <div id="div5">
+            </div>
+            <div id="zoomGeorgia" class="scrollyText">
+                Let's look at the providers of Autism services in Georgia. The data is collected from <a
+                    href="https://www.p2pga.org/">Parent to Parent of Georgia</a>. The colors reprsent the number of
+                providers in each county. Dekalb, and nearby counties have the maximum number of providers. A
+                geographical
+                disparity of services between North and South Georgia is evident.
+            </div>
+            <div id="georgiaServices" class="scrollyText">
+                Locations of providers in Georgia.
+            </div>
+            <div id="div1" class="scrollyText">
+                The <a href="https://nlts2.sri.com/index.html">NLTS2</a> (National Longitudinal Transitional Study 2)
+                data
+                covers a population sample that represents over 14,000 Autistc youths who received Special Education.
+                Each pixel here represents 10 students.
+            </div>
+            <div id="div2" class="scrollyText">
+                Approximately 26% of young adults on the autism spectrum received no services – services which could
+                help
+                them become employed, continue their education, or live more independently.
+            </div>
+            <div id="div3" class="scrollyText">
+                Frequency of services reduced drastically since high-school. 66% of autistic youths received Speech
+                Language
+                Therapy at the age of 17.
+            </div>
+            <div id="div4" class="scrollyText">
+                Only 10% received it since high-school. 56% of the youth no longer received Speech Language Therapy.
+            </div>
+            <div id="div5" class="scrollyText">
+                Explore other services
+                <br>
+                <select id="updateServiceType">
+                    <option value="">Select a Service</option>
+                </select>
+            </div>
+            <!-- <div id="div5">
             div5
         </div> -->
 
 
-    </div>
+        </div>
 
-    <!-- <svg width="960", height="600" id="cartogram"></svg> -->
+        <!-- <svg width="960", height="600" id="cartogram"></svg> -->
 
-    <div class="fixed">
-        <!-- <button id="prevVis">Prev</button>
+        <div class="fixed">
+            <!-- <button id="prevVis">Prev</button>
         <button id="nextVis">Next</button> -->
-        
-        <div id="leafletMap" style="display:none"></div>
+
+            <div id="leafletMap" style="display:none"></div>
+        </div>
     </div>
 
-    <footer>
 
-    </footer>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
