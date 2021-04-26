@@ -31,12 +31,12 @@ function childrenVsAdults() {
     function createStickyNodes() {
         populationColors = ["#a6c8ff","#0f62fe"]
         populationLabelColors = ["black", "white"]
-        numChildren = 1921908	
-        numAdults = 5437988
+        numChildren = 1500000//1921908	
+        numAdults =   5437988
 
         radiusScale = d3.scaleLinear().domain([0, numAdults]).range([0, 200]);
 
-        populationGroups = [{ count : numChildren }, { count: numAdults }];
+        populationGroups = [{ count : numChildren, approx: "1.5 M" }, { count: numAdults, approx: "5.4 M" }];
 
         simulation = d3.forceSimulation(populationGroups)
             .force('charge', d3.forceManyBody().strength(1000))
@@ -91,7 +91,7 @@ function childrenVsAdults() {
             .attr('y', d=> {return d.y})
             
             .text(d=> {
-                return d.count
+                return d.approx
             })
 
 

@@ -46,7 +46,12 @@ var unitXScale, unitNodes, xAxis, unitYScale, yAxis
 //unit vis for services cliff
 function servicesCliffVis() {
     //TODO: removed unnecessary DOM elements]
-
+    if(!d3.select(".unitVisGroup").empty()){
+        d3.select(".unitVisGroup").style("display", "block");
+        //TODO: refresh to all pixels
+        showUnits();
+        return;
+    }
 
     bottomMargin = 100;
     height2 = height - bottomMargin //leave some space at the bottom
@@ -116,7 +121,8 @@ function servicesCliffVis() {
     xAxis = d3.axisBottom()
         .scale(unitXScale)
 
-    svg.append('g')
+    unitVisGroup = svg.append('g').attr("class", "unitVisGroup")
+    unitVisGroup.append('g')
         .attr('transform', 'translate(0,' + (+height2) + ')')
         .call(xAxis)
         .attr('class', 'xAxisUnit')
@@ -136,7 +142,7 @@ function servicesCliffVis() {
     yAxis = d3.axisLeft()
         .scale(unitYScale);
 
-    svg.append("g")
+    unitVisGroup.append("g")
         .call(yAxis)
         .attr('class', 'yAxisUnit')
 
@@ -156,7 +162,9 @@ function servicesCliffVis() {
 }
 
 function showUnits(service = null, ratio = null) {
-    var units = svg
+    unitVisGroup = svg.select(".unitVisGroup");
+
+    var units = unitVisGroup
         .selectAll('.unit')
         .data(unitNodes)
 
@@ -193,7 +201,7 @@ function showUnits(service = null, ratio = null) {
                 d.class = ''
             }
         })
-        svg.selectAll('.unit')
+        unitVisGroup.selectAll('.unit')
             .filter(d => { return d.class == 'none' })
             // .transition()
             // .duration(1000)
@@ -206,6 +214,7 @@ function showUnits(service = null, ratio = null) {
 }
 
 function showUnitsBefore(service = null) {
+    unitVisGroup = svg.select(".unitVisGroup");
     if (service != null) {
         ratioBefore = service['before']
         ratioAfter = service['after']
@@ -226,15 +235,16 @@ function showUnitsBefore(service = null) {
         })
     }
 
-    svg.selectAll('.unit').filter((d, i) => { return d.class == 'none' })
+    unitVisGroup.selectAll('.unit').filter((d, i) => { return d.class == 'none' })
         .style('fill', gray1)
 
-    svg.selectAll('.unit').filter((d, i) => { return d.class == 'before' })
+    unitVisGroup.selectAll('.unit').filter((d, i) => { return d.class == 'before' })
         .style('fill', blue1)
 
 }
 function showUnitsAfter(service = null) {
-    console.log(ratio)
+    unitVisGroup = svg.select(".unitVisGroup");
+
     if (service != null) {
         ratioBefore = service['before']
         ratioAfter = service['after']
@@ -255,7 +265,7 @@ function showUnitsAfter(service = null) {
     }
 
 
-    var units = svg
+    var units = unitVisGroup
         .selectAll('.unit')
         .filter((d, i) => {
             return d.class == 'after'
@@ -264,7 +274,7 @@ function showUnitsAfter(service = null) {
         .duration(1000)
         .style("fill", blue2)
 
-    svg.selectAll(".unit")
+    unitVisGroup.selectAll(".unit")
         .filter((d, i) => {
             return d.class == 'before'
         })
@@ -319,7 +329,7 @@ d3.csv("data/P2PData.csv", function (dataSet) {
     
     new scroll('div0', '50%', drawPrevalenceMap, childrenVsAdults);
     new scroll('zoomGeorgia', "50%", zoomGeorgia, drawPrevalenceMap)
-    new scroll('georgiaServices', '50%', georgiaServices, drawPrevalenceMap)
+    new scroll('georgiaServices', '50%', georgiaServices, zoomGeorgia)
     new scroll('div1', '50%', servicesCliffVisDummy, georgiaServices);
 
     new scroll('div2', '50%', showNoServices, servicesCliffVisDummy);
@@ -341,12 +351,15 @@ d3.csv("data/P2PData.csv", function (dataSet) {
 })
 
 function servicesCliffVisDummy() {
+    //if(d3.select(""))
     emptySvg()
     servicesCliffVis()
 }
 function emptySvg() {
     console.log("emptying svg")
-    svg.selectAll("*").remove();
+    //svg.selectAll("*").remove();
+    svg.select(".cartogram").style("display", "none")
+    svg.select(".genderBarGraph").style("display", "none");
     d3.select("#leafletMap").style("display", "none");
 }
 

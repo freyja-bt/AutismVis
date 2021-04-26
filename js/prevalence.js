@@ -22,22 +22,22 @@ function getCentroid(t) {
 }
 
 var prevalenceBarGraph
+var countiesTip
+var lowColor = '#eff3ff'
+var highColor = '#08519c'
+
 function drawPrevalenceMap() {
     svg.selectAll("*").remove()
 
-    var lowColor = '#eff3ff'
-    var highColor = '#08519c'
+
 
     var svgCartogram = svg.append("g").attr("class", "cartogram"),
-    radius = d3.scaleSqrt().range([0, 90]).clamp(true),
+        radius = d3.scaleSqrt().range([0, 90]).clamp(true),
         colorCartogram = d3.scaleLinear().range([lowColor, highColor])//scaleOrdinal().range(d3.schemeBlues[4]);
 
     casesPerGender = {
         xAxis: null, yAxis: null, x: null, y: null, z: null
     }
-
-
-
     var cartogramTip = d3.tip()
         .attr('class', 'd3-tip')
         .offset([-5, 0])
@@ -45,6 +45,20 @@ function drawPrevalenceMap() {
             return 'State: ' + d.id + '<br>Estimate Cases: ' + d.cases + '<br>Estimated Prevalence: ' + d.prevalence
         })
     svgCartogram.call(cartogramTip);
+
+    countiesTip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-5, 0])
+        .html(function (d) {
+            providers = "";
+            if(d.providers == undefined)
+                providers = "N/A"
+            else
+                providers = d.providers
+
+            return 'County: ' + d.properties.name + '<br>Number of providers: ' + providers 
+        })
+    //svgCartogram.call(countiesTip);
 
     function numeric(row) {
         for (var key in row) {
@@ -63,19 +77,21 @@ function drawPrevalenceMap() {
     d3.queue()
         .defer(d3.json, "data/us.json")
         .defer(d3.csv, "data/adult_prevalence.csv", numeric)
-        .defer(d3.json, "data/us-states-centroids.json")
-        .await(function (err, us, data, centroids) {
-
+        .defer(d3.json, "data/us-counties.json")
+        .await(function (err, us, data, usCounties) {
             radius.domain([0, d3.max(data, d => { return d["Cases"] })]);
             colorCartogram.domain(d3.extent(data, d => { return d["Prevalence"] }))
 
             dataById = d3.nest().key(d => d["id"]).rollup(a => { return a[0] }).object(data)
+            dataByCountyName = d3.nest().key(d => d["State"]).rollup(a => { return a[0] }).object(data)
+
 
             var neighbors = topojson.neighbors(us.objects.states.geometries),
                 nodes = topojson.feature(us, us.objects.states).features;
 
-            nodes.forEach(function (node, i) {
 
+            nodes.forEach(function (node, i) {
+                //node.id = node.properties.name;
                 node.cases = dataById[node.id]["Cases"]
                 node.prevalence = dataById[node.id]["Prevalence"]
                 var centroid = d3.geoPath().centroid(node);
@@ -87,9 +103,9 @@ function drawPrevalenceMap() {
 
             });
 
-   
-
-            var states = svgCartogram.selectAll("path")
+            path = d3.geoPath()
+            var statesGroup = svgCartogram.append("g")
+            var states = statesGroup.selectAll("path")
                 .data(nodes)
                 .enter()
                 .append("path")
@@ -100,6 +116,19 @@ function drawPrevalenceMap() {
                 })
 
 
+            var counties = svgCartogram.append("g")
+                .attr("id", "counties")
+
+            counties.selectAll("path")
+                .data(topojson.feature(usCounties, usCounties.objects.counties).features)
+                .enter().append("path")
+                .attr("d", path)
+                .attr("class", "county-boundary")
+                .style("fill", "none")
+                .style("stroke", "none");
+
+
+            //state labels
             // svgCartogram.selectAll(".dorlingStateLabel")
             //     .data(nodes)
             //     .enter()
@@ -179,10 +208,16 @@ function drawPrevalenceMap() {
                 });
 
                 d3.select("#showCartogram").on("click", function () {
-                    if (!isCartogram)
+                    if (!isCartogram) {
                         showCartogram()
-                    else
+                        d3.select(this).text("Geographical");
+                    }
+
+                    else {
                         showCholorpleth()
+                        d3.select(this).text("Cartogram");
+                    }
+
                     isCartogram = !isCartogram
                 })
                 function showCartogram() {
@@ -194,7 +229,7 @@ function drawPrevalenceMap() {
                             return node.interpolator
                         })
 
-
+                    //state labels
                     // svgCartogram.selectAll(".dorlingStateLabel")
                     //     .transition()
                     //     .duration(1500)
@@ -230,7 +265,7 @@ function drawPrevalenceMap() {
 
                 svgCartogram.append("g")
                     .attr("class", "barLegend")
-                    .attr("transform", "translate(" + (cartogramWidth - 100) + "," + (cartogramHeight - 150) + ")");
+                    .attr("transform", "translate(" + (cartogramWidth - 150) + "," + (cartogramHeight - 150) + ")");
 
                 svgCartogram.select(".barLegend")
                     .call(legend);
@@ -260,6 +295,7 @@ function drawPrevalenceMap() {
             .range([0, width])
 
         casesPerGender.xAxis = prevalenceBarGraph.append("g")
+            .attr("class", "genderBarGraph")
             .attr("transform", 'translate(0,' + (cartogramHeight + cartogramBarPadding) + ')')
             .attr("class", "x-axis")
 
@@ -403,11 +439,16 @@ function drawPrevalenceMap() {
 }
 zoomScrollDown = true
 function zoomGeorgia() {
-    //TODO: remove bar graph and legend
     //TODO: fix back scroll
     d3.select("#leafletMap").style("display", "none");
-    if (!zoomScrollDown)
-        drawPrevalenceMap()
+    d3.select(".unitVisGroup").style("display", "none");
+    //console.log(d3.select("#leafletMap"));
+    if (!zoomScrollDown) {
+        //drawPrevalenceMap()
+        svg.select(".cartogram").style("display", "block");
+    }
+    svg.select(".cartogram").style("display", "block");
+
 
     zoomScrollDown = !zoomScrollDown
 
@@ -432,16 +473,102 @@ function zoomGeorgia() {
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
         .style("stroke-width", 1.5 / k + "px");
 
+    // d3.selectAll(".county-boundary")
+    //     .style("fill", "none")
+    //     .style("stroke", "black");
+
     svgCartogram.selectAll("path.state")
         .transition()
         .duration(1000)
-        .style("fill", d => { if (d.id !== "GA") return "white" })
+        .style("fill", "white")//d => { if (d.id !== "GA") return "white" })
         .style("stroke", "none")
+
+    // svgCartogram.selectAll("path.state")
+    //     .on("mouseover", {})
+    //     .on("mouseout", {})
 
     prevalenceBarGraph.remove()
     d3.select(".barLegend").remove();
 
-    //showLeafletMap()
+    d3.selectAll("path.state").filter(d=>{ return d.id == "GA"}).call(countiesTip);
+
+    d3.queue()
+        .defer(d3.csv, "data/providers_per_county.csv")
+        .defer(d3.csv, "data/georgia_county_codes.csv")
+        .await(function (err, providersPerCounty, countyCodes) {
+
+            providersPerCounty.forEach(row => {
+                row["Providers"] = + row["Providers"]
+            })
+            data = d3.map(providersPerCounty, d => {
+                return d["County"]
+            })
+            countyName = d3.map(countyCodes, d => {
+                return d["fips"]
+            })
+
+
+            lowColor = "#c6dbef"
+            highColor = "#084594"
+            providersScale = d3.scaleLinear().range([lowColor, highColor])
+            providersScale.domain([1, d3.max(providersPerCounty, d => { return d["Providers"] })])
+
+            d3.selectAll(".county-boundary")
+                .style("fill", d => {
+                    //console.log(d)
+                    if (countyName["$" + d.id] !== undefined) {
+                        county = countyName["$" + d.id]["name"]
+                        if (data["$" + county] != undefined) {
+                            d.providers = data["$" + county]["Providers"]
+                            return providersScale(data["$" + county]["Providers"])
+                        }
+                        return "white"
+                    }
+
+                })
+                .style("stroke", d => {
+                    if (countyName["$" + d.id] !== undefined)
+                        return "gray"
+                    else
+                        return "none"
+                })
+
+            georgiaCounties = d3.selectAll(".county-boundary")
+                .filter(d => {
+                    return (countyName["$" + d.id] !== undefined)
+                })
+            georgiaCounties
+                .on("mouseover", d => countiesTip.show(d))
+                .on("mouseout", countiesTip.hide);
+
+
+            otherCounties = d3.selectAll(".county-boundary")
+                .filter(d => {
+                    return (countyName["$" + d.id] === undefined)
+                })
+            otherCounties.on("mouseover", {})
+                .on("mouseout", {})
+
+        
+            var legend = d3.legendColor()
+                .shapeWidth(30)
+                .orient('vertical')
+                .scale(providersScale)
+                .labelFormat(d3.format(".0f"));
+
+            if (d3.select(".countiesLegendSvg").empty()) {
+                legendGroup = d3.select("#zoomGeorgia").append("svg").attr("class", "countiesLegendSvg")
+                legendGroup.append("g")
+                    .attr("class", "countiesLegend")
+                    .attr("transform", "translate(" + 0 + "," + 0 + ")");
+
+                legendGroup.select(".countiesLegend")
+                    .call(legend);
+            }
+
+        })
+
+
 }
 
 

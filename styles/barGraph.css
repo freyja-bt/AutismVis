@@ -1,5 +1,7 @@
 /* children vs adults */
-
+.populationText{
+  font-size: 24px;
+}
 
 /* cartogram */
 path {
@@ -17,6 +19,21 @@ path {
 path.active{
   stroke: black;
 }
+.county-boundary {
+  fill: none;
+  stroke: gray;
+  stroke-width: .5px;
+}
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+
 /* cartogram */
 #leafletMap { width: 960px;
   height: 700px; }
@@ -53,7 +70,7 @@ html,
      height: 100%;
      padding: 0;
      scroll-behavior: smooth;
-     color: #999;
+     color:#303030;
      font-family: 'Georgia', sans-serif;
      font-weight: 400;
   }
@@ -123,7 +140,7 @@ html,
 
   .scrollyText
   {
-    font-size: 17px;
+    font-size: 24px;
     text-align: justify;
   }
 
