@@ -47,7 +47,7 @@ var scrollToExplore = false;
 //unit vis for services cliff
 function servicesCliffVis() {
     //TODO: removed unnecessary DOM elements]
-    if(!d3.select(".unitVisGroup").empty()){
+    if (!d3.select(".unitVisGroup").empty()) {
         d3.select(".unitVisGroup").style("display", "block");
         //TODO: refresh to all pixels
         showUnits();
@@ -151,12 +151,44 @@ function servicesCliffVis() {
 
     showUnits()
 
-    // d3.select("#nextVis").on("click", function () {
-    //     console.log("clicked");
-    //     //showUnits(27)
-    // })
 
+    //one pixel represents 10 youths
+    legendSvg = d3.selectAll(".nlts2Pixel")
+    legendSvg.append("rect")
+        .attr("x", 10)
+        .attr("y", 10)
+        .attr("height", 20)
+        .attr("width", 20)
+        .style("fill", "black")
 
+    legendSvg.append("text")
+        .attr("x", 40)
+        .attr("y", 25)
+        .text("=")
+
+    data = d3.range(10).map(d => {
+        return { id: d }
+    })
+    persons = legendSvg.append('g')
+        .attr("transform", "translate(60,10)")
+
+    persons.selectAll(".person")
+        .data(data)
+        .enter()
+        .append("svg:image")
+        .attr("xlink:href", function (d) { return "./images/person_black.png" })
+        .attr("x", function (d) {
+            return d.id * 25
+        })
+        .attr("y", 0)
+        .attr("height", 0)
+        .attr("width", 0)
+        .transition()
+        .duration(1000)
+        .delay(d => { return d.id * 100 })
+        .attr("height", 20)
+        .attr("width", 20)
+    //.style("fill", "red");
 
 
 
@@ -202,20 +234,22 @@ function showUnits(service = null, ratio = null) {
                 d.class = ''
             }
         })
+        totalWithoutServices = totalPopulation - unitsToShow
+
         unitVisGroup.selectAll('.unit')
             .filter(d => { return d.class == 'none' })
-            // .transition()
-            // .duration(1000)
-            // .delay(function (d, i) {
-            //     return (unitsToShow - i) * 0.5
-            // })
+            .transition()
+            .duration(1000)
+            .delay(function (d, i) {
+                return (totalWithoutServices - i) * 10
+            })
             .style("fill", gray1)
     }
 
 }
 
 function showUnitsBefore(service = null) {
-    if (scrollToExplore){
+    if (scrollToExplore) {
         return;
     }
     unitVisGroup = svg.select(".unitVisGroup");
@@ -240,6 +274,8 @@ function showUnitsBefore(service = null) {
     }
 
     unitVisGroup.selectAll('.unit').filter((d, i) => { return d.class == 'none' })
+        // .transition(1000)
+        // .delay((d,i) => {return i*10})
         .style('fill', gray1)
 
     unitVisGroup.selectAll('.unit').filter((d, i) => { return d.class == 'before' })
@@ -247,7 +283,7 @@ function showUnitsBefore(service = null) {
 
 }
 function showUnitsAfter(service = null) {
-    if (scrollToExplore){
+    if (scrollToExplore) {
         return;
     }
     unitVisGroup = svg.select(".unitVisGroup");
@@ -264,7 +300,7 @@ function showUnitsAfter(service = null) {
             if (i > unitsAfter && i < unitsBefore) {
                 d.class = 'after'
             }
-            if(i < unitsAfter){
+            if (i < unitsAfter) {
                 d.class = 'before'
             }
         })
@@ -277,8 +313,11 @@ function showUnitsAfter(service = null) {
         .filter((d, i) => {
             return d.class == 'after'
         })
-        .transition()
+    total = units.nodes().length
+
+    units.transition()
         .duration(1000)
+        .delay((d,i) => {return (total-i) * 5})
         .style("fill", blue2)
 
     unitVisGroup.selectAll(".unit")
@@ -333,7 +372,7 @@ d3.csv("data/P2PData.csv", function (dataSet) {
 
     //starts with this
     childrenVsAdults()
-    
+
     new scroll('div0', '50%', drawPrevalenceMap, childrenVsAdults);
     new scroll('zoomGeorgia', "50%", zoomGeorgia, drawPrevalenceMap)
     new scroll('georgiaServices', '50%', georgiaServices, zoomGeorgia)
@@ -344,14 +383,14 @@ d3.csv("data/P2PData.csv", function (dataSet) {
     new scroll('div4', '50%', showSpeechTherapyServicesAfter, showSpeechTherapyServicesBefore);
     new scroll('div5', '50%', exploreServices, showSpeechTherapyServicesAfter);
 
-    d3.select("#nlts2Outcomes").on("click", function() {
+    d3.select("#nlts2Outcomes").on("click", function () {
         scrollToExplore = true;
         document.getElementById('div5').scrollIntoView();
     })
-    d3.select("#providersGA").on("click", function() {
+    d3.select("#providersGA").on("click", function () {
         document.getElementById('georgiaServices').scrollIntoView();
     })
-    d3.select("#adultsPrevalence").on("click", function() {
+    d3.select("#adultsPrevalence").on("click", function () {
         document.getElementById('div0').scrollIntoView();
     })
 
@@ -405,7 +444,7 @@ function updateCurrVis() {
     }
 }
 function showNoServices() {
-    if (scrollToExplore){
+    if (scrollToExplore) {
         return;
     }
     showUnits(service = null, ratio = (100 - 26))
@@ -422,7 +461,7 @@ function exploreServices() {
     //TODO: create from scratch so that direct link works
     // unitNodes.forEach((d) => { d.class = '' })
     // showUnits()
-    if (scrollToExplore){
+    if (scrollToExplore) {
         scrollToExplore = false;
     }
     servicesCliffVis()

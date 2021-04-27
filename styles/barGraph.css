@@ -31,6 +31,9 @@ body {margin:0;}
   padding: 16px;
   margin-top: 35px;
 }
+.nlts2Pixel{
+  height: 60px;
+}
 
 /* children vs adults */
 .populationText{
@@ -69,8 +72,11 @@ path.active{
 
 
 /* cartogram */
-#leafletMap { width: 960px;
-  height: 700px; }
+#leafletMap 
+{ 
+  width: 100%;
+  height: 100%; 
+}
 circle {
   fill: orange;
 }
@@ -148,8 +154,8 @@ html,
   }
   .fixed {
     position: fixed;
-    max-width: 820px;
-    height: 500px;
+    max-width: 65%;
+    height: 100%;
     
   }
 
