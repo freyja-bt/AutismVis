@@ -35,6 +35,8 @@ function drawPrevalenceMap() {
         radius = d3.scaleSqrt().range([0, 90]).clamp(true),
         colorCartogram = d3.scaleLinear().range([lowColor, highColor])//scaleOrdinal().range(d3.schemeBlues[4]);
 
+    svgCartogram.attr("height", height - 100)
+        .attr("width", width - 100);
     casesPerGender = {
         xAxis: null, yAxis: null, x: null, y: null, z: null
     }
@@ -51,12 +53,12 @@ function drawPrevalenceMap() {
         .offset([-5, 0])
         .html(function (d) {
             providers = "";
-            if(d.providers == undefined)
+            if (d.providers == undefined)
                 providers = "N/A"
             else
                 providers = d.providers
 
-            return 'County: ' + d.properties.name + '<br>Number of providers: ' + providers 
+            return 'County: ' + d.properties.name + '<br>Number of providers: ' + providers
         })
     //svgCartogram.call(countiesTip);
 
@@ -89,12 +91,20 @@ function drawPrevalenceMap() {
             var neighbors = topojson.neighbors(us.objects.states.geometries),
                 nodes = topojson.feature(us, us.objects.states).features;
 
+            function scale(scaleFactor) {
+                return d3.geoTransform({
+                    point: function (x, y) {
+                        this.stream.point(x * scaleFactor, y * scaleFactor);
+                    }
+                });
+            }
 
+            path = d3.geoPath().projection(scale(0.85));
             nodes.forEach(function (node, i) {
                 //node.id = node.properties.name;
                 node.cases = dataById[node.id]["Cases"]
                 node.prevalence = dataById[node.id]["Prevalence"]
-                var centroid = d3.geoPath().centroid(node);
+                var centroid = d3.geoPath().projection(scale(0.85)).centroid(node);
 
                 node.x0 = centroid[0];
                 node.y0 = centroid[1];
@@ -103,13 +113,14 @@ function drawPrevalenceMap() {
 
             });
 
-            path = d3.geoPath()
+
+
             var statesGroup = svgCartogram.append("g")
             var states = statesGroup.selectAll("path")
                 .data(nodes)
                 .enter()
                 .append("path")
-                .attr("d", pathString)
+                .attr("d", path)
                 .attr("class", "state")
                 .attr("fill", d => {
                     return colorCartogram(d.prevalence)
@@ -197,6 +208,7 @@ function drawPrevalenceMap() {
                         interpolator = d3.interpolateArray(node.rings, [circle, ...closestPoints]);
 
                     node.interpolator = function (t) {
+                        //console.log(interpolator(t))
                         var str = pathString(interpolator(t));
                         // Prevent some fill-rule flickering for MultiPolygons
                         if (t > 0.99) {
@@ -490,7 +502,7 @@ function zoomGeorgia() {
     prevalenceBarGraph.remove()
     d3.select(".barLegend").remove();
 
-    d3.selectAll("path.state").filter(d=>{ return d.id == "GA"}).call(countiesTip);
+    d3.selectAll("path.state").filter(d => { return d.id == "GA" }).call(countiesTip);
 
     d3.queue()
         .defer(d3.csv, "data/providers_per_county.csv")
@@ -549,7 +561,7 @@ function zoomGeorgia() {
             otherCounties.on("mouseover", {})
                 .on("mouseout", {})
 
-        
+
             var legend = d3.legendColor()
                 .shapeWidth(30)
                 .orient('vertical')
