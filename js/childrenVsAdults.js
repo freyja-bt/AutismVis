@@ -29,14 +29,14 @@ function childrenVsAdults() {
         u.exit().remove()
     }
     function createStickyNodes() {
-        populationColors = ["#a6c8ff","#0f62fe"]
+        populationColors = ["#a6c8ff", "#0f62fe"]
         populationLabelColors = ["black", "white"]
         numChildren = 1500000//1921908	
-        numAdults =   5437988
+        numAdults = 5437988
 
         radiusScale = d3.scaleLinear().domain([0, numAdults]).range([0, 200]);
 
-        populationGroups = [{ count : numChildren, approx: "1.5 M" }, { count: numAdults, approx: "5.4 M" }];
+        populationGroups = [{ count: numChildren, approx: "1.5 M" }, { count: numAdults, approx: "5.4 M" }];
 
         simulation = d3.forceSimulation(populationGroups)
             .force('charge', d3.forceManyBody().strength(1000))
@@ -59,7 +59,7 @@ function childrenVsAdults() {
             .attr('r', function (d) {
                 return 0
             })
-            .style("fill", (d,i) => {return populationColors[i]})
+            .style("fill", (d, i) => { return populationColors[i] })
             .merge(u)
             .attr('cx', function (d) {
                 return d.x
@@ -69,7 +69,7 @@ function childrenVsAdults() {
             })
             .transition()
             .duration(1000)
-            .attr('r', function(d){
+            .attr('r', function (d) {
                 return radiusScale(d.count)
             })
 
@@ -81,16 +81,16 @@ function childrenVsAdults() {
             .enter()
             .append('text')
             .attr("class", "populationText")
-            .attr("fill", (d,i) => populationLabelColors[i])
+            .attr("fill", (d, i) => populationLabelColors[i])
             .attr("text-anchor", "middle")
-            .attr('x', d=> {return d.x})
-            .attr('y', d=> {return d.y})
+            .attr('x', d => { return d.x })
+            .attr('y', d => { return d.y })
             .transition()
             .delay(1000)
-            .attr('x', d=> {return d.x})
-            .attr('y', d=> {return d.y})
-            
-            .text(d=> {
+            .attr('x', d => { return d.x })
+            .attr('y', d => { return d.y })
+
+            .text(d => {
                 return d.approx
             })
 
@@ -98,5 +98,24 @@ function childrenVsAdults() {
 
     }
     createStickyNodes()
+
+    //legend
+    ordinal = d3.scaleOrdinal()
+        .range(populationColors)
+        .domain(["Children", "Adults"]);
+
+    var barLegendSvg = d3.select(".childrenAdultLegend");
+
+    barLegendSvg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(20,20)");
+
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+        .shapePadding(10)
+        .scale(ordinal);
+
+    barLegendSvg.select(".legendOrdinal")
+        .call(legendOrdinal);
     //simulation.stop();
 }

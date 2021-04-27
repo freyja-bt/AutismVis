@@ -311,8 +311,11 @@ function drawPrevalenceMap() {
             .attr("transform", 'translate(0,' + (cartogramHeight + cartogramBarPadding) + ')')
             .attr("class", "x-axis")
 
+        maleColor = "#F98E31"
+        femaleColor = "#FBC491"
+
         casesPerGender.z = d3.scaleOrdinal()
-            .range(["#F98E31", "#FBC491"])
+            .range([maleColor, femaleColor])
             .domain(keys);
 
         casesPerGender.x.domain([0, totalMax]).nice();
@@ -322,6 +325,26 @@ function drawPrevalenceMap() {
             .call(d3.axisTop(casesPerGender.x).ticks(5))
 
         d3.select(".x-axis").select("path").style("display", "none")
+
+
+        //legend
+        ordinal = d3.scaleOrdinal()
+            .range([maleColor, femaleColor])
+            .domain(["Male", "Female"]);
+
+        var barLegendSvg = d3.select(".barLegend");
+
+        barLegendSvg.append("g")
+            .attr("class", "legendOrdinal")
+            .attr("transform", "translate(20,20)");
+
+        var legendOrdinal = d3.legendColor()
+            .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+            .shapePadding(10)
+            .scale(ordinal);
+
+        barLegendSvg.select(".legendOrdinal")
+            .call(legendOrdinal);
     }
 
     //bar graph
