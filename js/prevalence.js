@@ -276,10 +276,10 @@ function drawPrevalenceMap() {
                 cartogramWidth = d3.select(".cartogram").node().getBBox().width
 
                 svgCartogram.append("g")
-                    .attr("class", "barLegend")
+                    .attr("class", "mapLegend")
                     .attr("transform", "translate(" + (cartogramWidth - 150) + "," + (cartogramHeight - 150) + ")");
 
-                svgCartogram.select(".barLegend")
+                svgCartogram.select(".mapLegend")
                     .call(legend);
 
             }
@@ -523,7 +523,7 @@ function zoomGeorgia() {
     //     .on("mouseout", {})
 
     prevalenceBarGraph.remove()
-    d3.select(".barLegend").remove();
+    d3.select(".mapLegend").remove();
 
     d3.selectAll("path.state").filter(d => { return d.id == "GA" }).call(countiesTip);
 
