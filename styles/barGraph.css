@@ -31,6 +31,12 @@ body {margin:0;}
   padding: 16px;
   margin-top: 35px;
 }
+
+.mainLegend{
+  width: 100%;
+  font-size: 14;
+  font-weight: normal;
+}
 .nlts2Pixel{
   height: 60px;
 }
@@ -247,10 +253,10 @@ html,
     background-size:100%;
   } */
 
-  .label{
+  /* .label{
     color: rgb(219, 23, 23);
     font-weight: bold;
-  }
+  } */
 
   .greenLabel{
     color: rgb(43, 174, 102);

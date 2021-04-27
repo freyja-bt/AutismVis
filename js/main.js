@@ -2,10 +2,10 @@ var margin = { top: 50, right: 50, bottom: 50, left: 50 },
     width = 0.6 * (window.innerWidth - margin.left - margin.right),
     height = window.innerHeight - margin.top - margin.bottom;
 
-blue1 = "#0096c7"
-blue2 = "#a9d6e5"
-gray1 = "#dee2e6"
-gray0 = "#343a40"
+blue1 = "#0096c7" //received before
+blue2 = "#a9d6e5" //received after
+gray1 = "#dee2e6" //none
+gray0 = "#343a40" //all
 
 //Autism Providers
 var p2pDataGA
@@ -281,6 +281,26 @@ function showUnitsBefore(service = null) {
     unitVisGroup.selectAll('.unit').filter((d, i) => { return d.class == 'before' })
         .style('fill', blue1)
 
+
+    //legend
+    ordinal = d3.scaleOrdinal()
+        .range([blue1, gray1])
+        .domain(["Received service", "Did not receive service"]);
+
+    var barLegendSvg = d3.select(".servicesBefore");
+
+    barLegendSvg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(20,20)");
+
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+        .shapePadding(10)
+        .scale(ordinal);
+
+    barLegendSvg.select(".legendOrdinal")
+        .call(legendOrdinal);
+
 }
 function showUnitsAfter(service = null) {
     if (scrollToExplore) {
@@ -317,7 +337,7 @@ function showUnitsAfter(service = null) {
 
     units.transition()
         .duration(1000)
-        .delay((d,i) => {return (total-i) * 5})
+        .delay((d, i) => { return (total - i) * 5 })
         .style("fill", blue2)
 
     unitVisGroup.selectAll(".unit")
@@ -325,6 +345,27 @@ function showUnitsAfter(service = null) {
             return d.class == 'before'
         })
         .style("fill", blue1)
+
+
+    //legend
+    
+    ordinal = d3.scaleOrdinal()
+        .range([gray1, blue2, blue1])
+        .domain(["Did not receive service","Did not service after high school", "Recieved service during and after high school"]);
+
+    var barLegendSvg = d3.select(".servicesAfter");
+
+    barLegendSvg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(20,20)");
+
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+        .shapePadding(10)
+        .scale(ordinal);
+
+    barLegendSvg.select(".legendOrdinal")
+        .call(legendOrdinal);
 }
 
 
@@ -448,6 +489,25 @@ function showNoServices() {
         return;
     }
     showUnits(service = null, ratio = (100 - 26))
+
+    //legend
+    ordinal = d3.scaleOrdinal()
+        .range([gray0, gray1])
+        .domain(["Received Services", "Did Not Receive Services"]);
+
+    var barLegendSvg = d3.select(".noService");
+
+    barLegendSvg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(20,20)");
+
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+        .shapePadding(10)
+        .scale(ordinal);
+
+    barLegendSvg.select(".legendOrdinal")
+        .call(legendOrdinal);
 }
 function showSpeechTherapyServicesBefore() {
     //showUnits(service = null, serviceAvailability['Speech-language therapy'].before)
@@ -477,6 +537,26 @@ function exploreServices() {
             showUnitsAfter(serviceAvailability[selectedServiceType])
         }, 1000);
     })
+
+    //legend
+    
+    ordinal = d3.scaleOrdinal()
+        .range([gray1, blue2, blue1])
+        .domain(["Did not receive service","Did not service after high school", "Recieved service during and after high school"]);
+
+    var barLegendSvg = d3.select(".exploreServices");
+
+    barLegendSvg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(20,20)");
+
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+        .shapePadding(10)
+        .scale(ordinal);
+
+    barLegendSvg.select(".legendOrdinal")
+        .call(legendOrdinal);
 
 }
 
