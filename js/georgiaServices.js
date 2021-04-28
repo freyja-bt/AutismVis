@@ -1,6 +1,6 @@
 leafletScrollDown = true;
 function georgiaServices() {
-    if(!leafletScrollDown){
+    if (!leafletScrollDown) {
         d3.select("#leafletMap").style("display", "block");
         return;
     }
@@ -24,32 +24,65 @@ function georgiaServices() {
 
     d3.csv('data/allServiceProviders.csv', function (data) {
         //console.log("sfd")
-        filteredData = data.filter(d=>{
+        filteredData = data.filter(d => {
             return d["source"] == "p2p"
         })
+
+
+        ageCategories = ["Under 3 Years", "3-5 Years", "6-11 Years", "12-18 Years", "19-21 Years", "21+ Years", "All Ages"];
+        filteredData.map(row => {
+            ages = row["ages"].split("; ");
+            ageCategories.forEach(age => {
+                if (ages.includes(age)) {
+                    row[age] = 1
+                }
+                else {
+                    row[age] = 0
+                }
+            })
+        })
+
+        console.log(filteredData);
+
         myCircleMarker = L.CircleMarker.extend({
             options: {
                 name: "",
-                age: ""
+                age: "",
+                agesUnder3: 0,
+                ages3To5: 0,
+                ages6To11: 0,
+                ages12To18: 0,
+                ages19To21: 0,
+                agesAbove21: 0,
+                agesAll: 0,
+                isMarker: 1
             }
         })
         filteredData.forEach((loc, i) => {
-            var marker = new myCircleMarker([loc['lat'], loc['lon']],{
+            var marker = new myCircleMarker([loc['lat'], loc['lon']], {
                 radius: 5,
                 fill: true,
                 fillColor: "red",
                 fillOpacity: 0.5,
-                color: "red",
+                stroke: false,
+                class: "geoMarker",
                 name: loc["name"],
-                age: loc["ages"]
-            }
-            )
+                age: loc["ages"],
+                agesUnder3: loc["Under 3 Years"],
+                ages3To5: loc["3-5 Years"],
+                ages6To11: loc["6-11 Years"],
+                ages12To18: loc["12-18 Years"],
+                ages19To21: loc["19-21 Years"],
+                agesAbove21: loc["21+ Years"],
+                agesAll: loc["All Ages"],
+                isMarker: 1
+            })
             marker.id = i
             marker.addTo(mymap);
             marker.on("click", onClick)
             //console.log(marker.getRadius())
             //marker.setRadius(5);
-            
+
         })
 
         var popup = L.popup();
@@ -63,12 +96,155 @@ function georgiaServices() {
         }
 
         //mymap.on('click', onMapClick);
-        function onClick(e){
+        function onClick(e) {
             // console.log(this)
             popup
                 .setLatLng(this._latlng)
-                .setContent(this.options.name)
+                .setContent(this.options.name + "<br>Ages: " + this.options.age)
                 .openOn(mymap);
+        }
+
+
+        ageKeys = ["agesUnder3", "ages3To5", "ages6To11", "ages12To18", "ages19To21", "agesAbove21", "agesAll"]
+
+        d3.selectAll(".ageCheckbox").on("change", function () {
+            //console.log("changed");
+            selected = [];
+            ageKeys.forEach(key => {
+                if (d3.select("#" + key).property("checked")) {
+                    selected.push(key)
+                }
+            })
+            //console.log(selected);
+            mymap.eachLayer(layer => {
+                if (layer.options.isMarker == 1)
+                    layer.setStyle({ fill: false })
+            })
+            mymap.eachLayer(layer => {
+                if (layer.options.isMarker == 1) {
+                    selected.forEach(age => {
+                        if (layer.options[age] == 1) {
+                            layer.setStyle({ fill: true })
+                        }
+
+                    })
+                }
+            })
+        })
+
+        selectedBars = [];
+        providersCount = []
+        ageCategories.forEach((age, i) => {
+            count = filteredData.filter((d) => {
+                return d[age] == 1
+            }).length
+            providersCount.push({ "age": age, "count": count, "selected": true, "key": ageKeys[i] })
+        })
+        //console.log(providersCount);
+        ageBarGraph = d3.select("#ageBarGraph");
+
+        barGraphWidth = 350
+        barGraphHeight = 350
+        barGraphMargin = { top: 20, right: 20, bottom: 60, left: 40 }
+        // set the ranges
+        var x = d3.scaleBand()
+            .range([0, barGraphWidth])
+            .padding(0.2);
+        var y = d3.scaleLinear()
+            .range([barGraphHeight, 0]);
+
+        g = ageBarGraph.attr("width", barGraphWidth + barGraphMargin.left + barGraphMargin.right)
+            .attr("height", barGraphHeight + barGraphMargin.top + barGraphMargin.bottom)
+            .append("g")
+            .attr("transform",
+                "translate(" + barGraphMargin.left + "," + barGraphMargin.top + ")");
+
+        var ageBarGraphTip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-5, 0])
+            .html(function (d) {
+                if(d.selected){
+                    text = "(Selected)"
+                }
+                else{
+                    text = "(Deselected)"
+                }
+                return 'Age: ' + d.age + '<br>Number of Providers: ' + d.count + "<br>" + text
+            })
+        ageBarGraph.call(ageBarGraphTip);
+
+
+        x.domain(providersCount.map(function (d) { return d.age; }));
+        y.domain([0, d3.max(providersCount, function (d) { return +d.count })])
+
+        g.selectAll(".ageBar")
+            .data(providersCount)
+            .enter().append("rect")
+            .attr("class", "ageBar")
+            .attr("x", function (d) { return x(d.age); })
+            .attr("width", x.bandwidth())
+            .attr("y", function (d) { return y(d.count); })
+            .attr("height", function (d) { return barGraphHeight - y(d.count); })
+            .style("fill", "steelblue")
+            .on("click", function (d) {
+                d.selected = !d.selected;
+                updateMap();
+            })
+            .on("mouseover", ageBarGraphTip.show)
+            .on("mouseout", ageBarGraphTip.hide)
+
+        // add the x Axis
+        g.append("g")
+            .attr("transform", "translate(0," + barGraphHeight + ")")
+            .call(d3.axisBottom(x))
+            .attr("id", "agesXAxis")
+            .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", "rotate(-35)");
+
+        // add the y Axis
+        g.append("g")
+            .call(d3.axisLeft(y).ticks(5))
+            .attr("id", "agesYAxis")
+
+        d3.select("#agesXAxis").select("path")
+            .style("stroke", "white")
+        d3.select("#agesYAxis").select("path")
+            .style("stroke", "white")
+
+        d3.select("#agesXAxis").selectAll(".tick").select("line")
+            .style("stroke", "white")
+
+        function updateMap() {
+            selectedAges = providersCount.filter(d => { return d.selected == true })
+            console.log(selectedAges);
+            d3.selectAll(".ageBar")
+                .style("fill", d => {
+                    if (d.selected == true) {
+                        return "steelblue"
+                    }
+                    else {
+                        return gray1
+                    }
+                })
+            selected = selectedAges.map(d => { return d.key })
+            mymap.eachLayer(layer => {
+                if (layer.options.isMarker == 1)
+                    layer.setStyle({ fill: false })
+            })
+            mymap.eachLayer(layer => {
+                if (layer.options.isMarker == 1) {
+                    selected.forEach(age => {
+                        if (layer.options[age] == 1) {
+                            layer.setStyle({ fill: true })
+                        }
+
+                    })
+                }
+            })
+
         }
     })
 }

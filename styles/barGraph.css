@@ -1,3 +1,4 @@
+
 body {margin:0;}
 .navbar {
   overflow: hidden;
@@ -47,7 +48,7 @@ body {margin:0;}
 }
 
 /* cartogram */
-path {
+path.state {
   stroke: #000;
   stroke-width: 1px;
 }
@@ -187,7 +188,7 @@ html,
   .scrollyText
   {
     font-size: 18px;
-    text-align: justify;
+    /* text-align: justify; */
   }
 
 

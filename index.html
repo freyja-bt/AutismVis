@@ -19,12 +19,12 @@
 
 <body>
     <div class="navbar">
-        <a id = "title" href="">Autism Services Cliff</a>
-        <a id = "nlts2Outcomes" >NLTS2 Outcomes</a>
-        <a id = "providersGA" >Providers in Georgia</a>
-        <a id = "adultsPrevalence" >Autism Prevalence in Adults</a>
-        
-        
+        <a id="title" href="">Autism Services Cliff</a>
+        <a id="nlts2Outcomes">NLTS2 Outcomes</a>
+        <a id="providersGA">Providers in Georgia</a>
+        <a id="adultsPrevalence">Autism Prevalence in Adults</a>
+
+
     </div>
     <div class="main">
         <div class="container">
@@ -35,7 +35,7 @@
                 (ages 3-17) had autism in the year 2016. Based on this and other data, the estimated
                 number of adults (ages 18-84) with autism is over 5.4 million in the year 2017.
                 <br>
-                <svg class = "childrenAdultLegend mainLegend"></svg>
+                <svg class="childrenAdultLegend mainLegend"></svg>
             </div>
             <div id="div0" class="scrollyText">
                 The prevalence estimates were calculated nationwide and for each state in the United States. Hover on a
@@ -58,36 +58,61 @@
                 disparity of services between North and South Georgia is evident.
             </div>
             <div id="georgiaServices" class="scrollyText">
-                Locations of providers in Georgia.
+                The map shows locations of all providers in Georgia (based on the data extraced from Parents To Parents of Georgia). Select/Deselect age groups by clicking on the respective bars to filter locations of providers. 
+                <br>
+                <!-- <br>
+                <input type="checkbox" class = "ageCheckbox" id="agesUnder3" name="agesUnder3" value="agesUnder3" checked>
+                <label for="agesUnder3"> Under 3</label><br>
+
+                <input type="checkbox" class = "ageCheckbox" id="ages3To5" name="ages3To5" value="ages3To5" checked>
+                <label for="ages3To5"> 3-5 Years</label><br>
+
+                <input type="checkbox" class = "ageCheckbox" id="ages6To11" name="ages6To11" value="ages6To11" checked>
+                <label for="ages6To11"> 6-11 Years</label><br>
+
+                <input type="checkbox" class = "ageCheckbox"  id="ages12To18" name="ages12To18" value="ages12To18" checked>
+                <label for="ages12To18"> 12-18 Years</label><br>
+
+                <input type="checkbox" class = "ageCheckbox" id="ages19To21" name="ages19To21" value="ages19To21" checked>
+                <label for="ages19To21"> 19-21 Years</label><br>
+
+                <input type="checkbox" class = "ageCheckbox" id="agesAbove21" name="agesAbove21" value="agesAbove21" checked> 
+                <label for="agesAbove21"> 21+ Years</label><br>
+
+                <input type="checkbox" class = "ageCheckbox" id="agesAll" name="agesAll" value="agesAll" checked>
+                <label for="agesAll"> All Ages</label><br> -->
+
+                <svg id="ageBarGraph"></svg>
+               
             </div>
             <div id="div1" class="scrollyText">
                 The <a href="https://nlts2.sri.com/index.html">NLTS2</a> (National Longitudinal Transitional Study 2)
                 data
                 covers a population sample that represents over 14,000 Autistc youths who received Special Education.
                 Each pixel here represents 10 students.
-                <br><svg class = "nlts2Pixel mainLegend"></svg>
+                <br><svg class="nlts2Pixel mainLegend"></svg>
             </div>
             <div id="div2" class="scrollyText">
                 Approximately 26% of young adults on the autism spectrum received no services – services which could
                 help
                 them become employed, continue their education, or live more independently.
-                <br><svg class = "noService mainLegend"></svg>
+                <br><svg class="noService mainLegend"></svg>
             </div>
             <div id="div3" class="scrollyText">
                 Frequency of services reduced drastically since high-school. 66% of autistic youths received Speech
                 Language
                 Therapy at the age of 17.
-                <br><svg class = "servicesBefore mainLegend"></svg>
+                <br><svg class="servicesBefore mainLegend"></svg>
 
             </div>
             <div id="div4" class="scrollyText">
                 Only 10% received it since high-school. 56% of the youth no longer received Speech Language Therapy.
-                <br><svg class = "servicesAfter mainLegend"></svg>
+                <br><svg class="servicesAfter mainLegend"></svg>
             </div>
             <div id="div5" class="scrollyText">
                 <br>
-                <svg class = "nlts2Pixel mainLegend"></svg>
-                <br><svg class = "exploreServices mainLegend"></svg>
+                <svg class="nlts2Pixel mainLegend"></svg>
+                <br><svg class="exploreServices mainLegend"></svg>
                 <br>
                 Explore other services
                 <select id="updateServiceType">
