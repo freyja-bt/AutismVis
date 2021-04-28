@@ -94,6 +94,10 @@ function georgiaServices() {
             if (layer.options.isMarker == 1 && layer.options.ages19To21 !== 1)
                 layer.setStyle({ fill: false, stroke: false })
         })
+        // mymap.eachLayer(layer => {
+        //     if (layer.options.isMarker == 1 && layer.options.ages19To21 == 1)
+        //         layer.setStyle({ fillColor: "red", color: "red"})
+        // })
 
         var popup = L.popup();
 
@@ -323,6 +327,7 @@ function georgiaServices() {
                     })
                 }
             })
+            
 
         }
 
