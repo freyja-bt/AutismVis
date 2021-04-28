@@ -11,6 +11,10 @@ function georgiaServices() {
 
     d3.select("#leafletMap").style("display", "block");
 
+
+    activeBarColor = "steelblue"
+    inactiveBarColor = gray1
+
     var mymap = L.map('leafletMap').setView([33.247875, -83.44116], 8);
     accessToken = 'pk.eyJ1Ijoic2hyaXNodGlhayIsImEiOiJja243cG55dzMwMXFkMnBxeGE0aTdzdzhhIn0.FwMnMNXY1bhjWrLKPVyUxw'
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
@@ -62,9 +66,11 @@ function georgiaServices() {
             var marker = new myCircleMarker([loc['lat'], loc['lon']], {
                 radius: 5,
                 fill: true,
-                fillColor: "red",
+                fillColor: activeBarColor,
                 fillOpacity: 0.5,
-                stroke: false,
+                stroke: true,
+                color: activeBarColor,
+                weight: 1,
                 class: "geoMarker",
                 name: loc["name"],
                 age: loc["ages"],
@@ -185,7 +191,7 @@ function georgiaServices() {
             .attr("width", x.bandwidth())
             .attr("y", function (d) { return y(d.count); })
             .attr("height", function (d) { return barGraphHeight - y(d.count); })
-            .style("fill", "steelblue")
+            .style("fill", activeBarColor)
             .on("click", function (d) {
                 d.selected = !d.selected;
                 updateMap();
@@ -223,16 +229,16 @@ function georgiaServices() {
             d3.selectAll(".ageBar")
                 .style("fill", d => {
                     if (d.selected == true) {
-                        return "steelblue"
+                        return activeBarColor
                     }
                     else {
-                        return gray1
+                        return inactiveBarColor
                     }
                 })
             selected = selectedAges.map(d => { return d.key })
             mymap.eachLayer(layer => {
                 if (layer.options.isMarker == 1)
-                    layer.setStyle({ fill: false })
+                    layer.setStyle({ fill: false, stroke: false })
             })
             mymap.eachLayer(layer => {
                 if (layer.options.isMarker == 1) {
