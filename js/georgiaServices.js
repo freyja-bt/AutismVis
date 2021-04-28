@@ -94,10 +94,10 @@ function georgiaServices() {
             if (layer.options.isMarker == 1 && layer.options.ages19To21 !== 1)
                 layer.setStyle({ fill: false, stroke: false })
         })
-        // mymap.eachLayer(layer => {
-        //     if (layer.options.isMarker == 1 && layer.options.ages19To21 == 1)
-        //         layer.setStyle({ fillColor: "red", color: "red"})
-        // })
+        mymap.eachLayer(layer => {
+            if (layer.options.isMarker == 1 && layer.options.ages19To21 == 1)
+                layer.setStyle({ fillColor: "red", color: "red"})
+        })
 
         var popup = L.popup();
 
@@ -194,7 +194,7 @@ function georgiaServices() {
 
         x.domain(providersCount.map(function (d) { return d.age; }));
         y.domain([0, d3.max(providersCount, function (d) { return +d.count })])
-
+        redColor = "#ff8585"
         bars = g.selectAll(".ageBar")
             .data(providersCount)
             .enter().append("rect")
@@ -205,7 +205,13 @@ function georgiaServices() {
             .attr("height", 0)
             .style("fill", d => {
                 if (d.selected == true) {
-                    return activeBarColor
+                    if(d.key == "agesAbove21"){
+                        return redColor
+                    }
+                    else{
+                        return activeBarColor
+                    }
+                    
                 }
                 else {
                     return inactiveBarColor
@@ -304,7 +310,12 @@ function georgiaServices() {
                 .duration(500)
                 .style("fill", d => {
                     if (d.selected == true) {
-                        return activeBarColor
+                        if(d.key == "agesAbove21"){
+                            return redColor
+                        }
+                        else{
+                            return activeBarColor
+                        }
                     }
                     else {
                         return inactiveBarColor
@@ -327,10 +338,21 @@ function georgiaServices() {
                     })
                 }
             })
-            
+            if (selected.includes("agesAbove21")) {
+                mymap.eachLayer(layer => {
+                    if (layer.options.isMarker == 1) {
+
+                        if (layer.options["agesAbove21"] == 1) {
+                            layer.setStyle({ fill: true, stroke: true, color: "red", fillColor: "red" })
+                        }
+
+                    }
+                })
+            }
+
 
         }
 
-        //updateMap()
+
     })
 }
