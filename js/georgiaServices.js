@@ -198,7 +198,7 @@ function georgiaServices() {
             .attr("x", function (d) { return x(d.age); })
             .attr("width", x.bandwidth())
             .attr("y", y(0))
-            .attr("height", 6)
+            .attr("height", 0)
             .style("fill", d => {
                 if (d.selected == true) {
                     return activeBarColor
@@ -211,9 +211,9 @@ function georgiaServices() {
         d3.selectAll("rect.ageBar")
             .transition()
             .duration(800)
-            .attr("y", function (d) { console.log(y(d.count)); return y(d.count); })
+            .attr("y", function (d) {return y(d.count); })
             .attr("height", function (d) { return barGraphHeight - y(d.count); })
-            .delay(function (d, i) { console.log(i); return (i * 100) })
+            .delay(function (d, i) {return (i * 100) })
 
 
         g.selectAll(".ageBar").on("click", function (d) {
@@ -246,6 +246,35 @@ function georgiaServices() {
 
         d3.select("#agesXAxis").selectAll(".tick").select("line")
             .style("stroke", "white")
+
+
+        line = d3.line()
+            .defined(d => !isNaN(d.count))
+            .x(d => x(d.age))
+            .y(d => y(d.count))
+
+        function transition(path) {
+            path.transition()
+                .duration(5000)
+                .attrTween("stroke-dasharray", tweenDash)
+        }
+
+        function tweenDash() {
+            console.log(this)
+            const l = this.getTotalLength(),
+                i = d3.interpolateString("0," + l, l + "," + l);
+            return function (t) { return i(t) };
+        }
+        g.append("path")
+            .datum(providersCount)
+            .attr("fill", "none")
+            .attr("stroke", "red")
+            .attr("stroke-width", 1.5)
+            .attr("d", line)
+            .call(transition);
+
+
+
 
         function updateMap() {
             selectedAges = providersCount.filter(d => { return d.selected == true })
