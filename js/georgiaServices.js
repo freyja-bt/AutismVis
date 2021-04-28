@@ -15,7 +15,7 @@ function georgiaServices() {
     activeBarColor = "steelblue"
     inactiveBarColor = gray1
 
-    var mymap = L.map('leafletMap').setView([33.247875, -83.44116], 8);
+    var mymap = L.map('leafletMap').setView([33.247875, -83.44116], 7);
     accessToken = 'pk.eyJ1Ijoic2hyaXNodGlhayIsImEiOiJja243cG55dzMwMXFkMnBxeGE0aTdzdzhhIn0.FwMnMNXY1bhjWrLKPVyUxw'
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -67,7 +67,7 @@ function georgiaServices() {
                 radius: 5,
                 fill: true,
                 fillColor: activeBarColor,
-                fillOpacity: 0.5,
+                fillOpacity: 0.6,
                 stroke: true,
                 color: activeBarColor,
                 weight: 1,
@@ -86,9 +86,13 @@ function georgiaServices() {
             marker.id = i
             marker.addTo(mymap);
             marker.on("click", onClick)
-            //console.log(marker.getRadius())
-            //marker.setRadius(5);
 
+        })
+
+        //deselect all except 21+ initially
+        mymap.eachLayer(layer => {
+            if (layer.options.isMarker == 1 && layer.options.ages19To21 !== 1)
+                layer.setStyle({ fill: false, stroke: false })
         })
 
         var popup = L.popup();
@@ -146,7 +150,11 @@ function georgiaServices() {
             }).length
             providersCount.push({ "age": age, "count": count, "selected": true, "key": ageKeys[i] })
         })
-        //console.log(providersCount);
+        providersCount.forEach(d => {
+            if (d.age != "21+ Years") {
+                d.selected = false;
+            }
+        })
         ageBarGraph = d3.select("#ageBarGraph");
 
         barGraphWidth = 350
@@ -169,10 +177,10 @@ function georgiaServices() {
             .attr('class', 'd3-tip')
             .offset([-5, 0])
             .html(function (d) {
-                if(d.selected){
+                if (d.selected) {
                     text = "(Selected)"
                 }
-                else{
+                else {
                     text = "(Deselected)"
                 }
                 return 'Age: ' + d.age + '<br>Number of Providers: ' + d.count + "<br>" + text
@@ -183,19 +191,35 @@ function georgiaServices() {
         x.domain(providersCount.map(function (d) { return d.age; }));
         y.domain([0, d3.max(providersCount, function (d) { return +d.count })])
 
-        g.selectAll(".ageBar")
+        bars = g.selectAll(".ageBar")
             .data(providersCount)
             .enter().append("rect")
             .attr("class", "ageBar")
             .attr("x", function (d) { return x(d.age); })
             .attr("width", x.bandwidth())
-            .attr("y", function (d) { return y(d.count); })
-            .attr("height", function (d) { return barGraphHeight - y(d.count); })
-            .style("fill", activeBarColor)
-            .on("click", function (d) {
-                d.selected = !d.selected;
-                updateMap();
+            .attr("y", y(0))
+            .attr("height", 6)
+            .style("fill", d => {
+                if (d.selected == true) {
+                    return activeBarColor
+                }
+                else {
+                    return inactiveBarColor
+                }
             })
+
+        d3.selectAll("rect.ageBar")
+            .transition()
+            .duration(800)
+            .attr("y", function (d) { console.log(y(d.count)); return y(d.count); })
+            .attr("height", function (d) { return barGraphHeight - y(d.count); })
+            .delay(function (d, i) { console.log(i); return (i * 100) })
+
+
+        g.selectAll(".ageBar").on("click", function (d) {
+            d.selected = !d.selected;
+            updateMap();
+        })
             .on("mouseover", ageBarGraphTip.show)
             .on("mouseout", ageBarGraphTip.hide)
 
@@ -227,6 +251,8 @@ function georgiaServices() {
             selectedAges = providersCount.filter(d => { return d.selected == true })
             console.log(selectedAges);
             d3.selectAll(".ageBar")
+                .transition()
+                .duration(500)
                 .style("fill", d => {
                     if (d.selected == true) {
                         return activeBarColor
@@ -235,6 +261,8 @@ function georgiaServices() {
                         return inactiveBarColor
                     }
                 })
+
+
             selected = selectedAges.map(d => { return d.key })
             mymap.eachLayer(layer => {
                 if (layer.options.isMarker == 1)
@@ -244,7 +272,7 @@ function georgiaServices() {
                 if (layer.options.isMarker == 1) {
                     selected.forEach(age => {
                         if (layer.options[age] == 1) {
-                            layer.setStyle({ fill: true })
+                            layer.setStyle({ fill: true, stroke: true })
                         }
 
                     })
@@ -252,5 +280,7 @@ function georgiaServices() {
             })
 
         }
+
+        //updateMap()
     })
 }

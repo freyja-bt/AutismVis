@@ -65,8 +65,8 @@ path.active{
 }
 .county-boundary {
   fill: none;
-  stroke: gray;
-  stroke-width: .5px;
+  stroke: black;
+  stroke-width: .3px;
 }
 #state-borders {
   fill: none;
