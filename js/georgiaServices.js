@@ -248,7 +248,9 @@ function georgiaServices() {
         d3.select("#agesXAxis").select("path")
             .style("stroke", "white")
         d3.select("#agesYAxis").select("path")
-            .style("stroke", "white")
+            .style("stroke", gray1)
+        d3.select("#agesYAxis").selectAll(".tick").select("line")
+            .style("stroke", gray1)
 
         d3.select("#agesXAxis").selectAll(".tick").select("line")
             .style("stroke", "white")
