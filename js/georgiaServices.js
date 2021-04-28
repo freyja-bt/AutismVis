@@ -159,7 +159,7 @@ function georgiaServices() {
 
         barGraphWidth = 350
         barGraphHeight = 350
-        barGraphMargin = { top: 20, right: 20, bottom: 60, left: 40 }
+        barGraphMargin = { top: 50, right: 20, bottom: 60, left: 40 }
         // set the ranges
         var x = d3.scaleBand()
             .range([0, barGraphWidth])

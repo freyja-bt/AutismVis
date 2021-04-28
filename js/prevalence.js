@@ -270,6 +270,7 @@ function drawPrevalenceMap() {
                 var legend = d3.legendColor()
                     .shapeWidth(30)
                     .orient('vertical')
+                    .title("Prevalence")
                     .scale(colorCartogram);
 
                 cartogramHeight = d3.select(".cartogram").node().getBBox().height
@@ -324,7 +325,8 @@ function drawPrevalenceMap() {
             //.transition().duration(speed)
             .call(d3.axisTop(casesPerGender.x).ticks(5))
 
-        d3.select(".x-axis").select("path").style("display", "none")
+        d3.select(".x-axis").select("path").style("stroke", gray1)
+        d3.select(".x-axis").selectAll(".tick").select("line").style("stroke", gray1)
 
 
         //legend
@@ -388,6 +390,7 @@ function drawPrevalenceMap() {
 
         totalLabel.exit().remove()
 
+        formatComma = d3.format(",")
         totalLabel.enter().append("text")
             .attr("class", "text")
             .attr("text-anchor", "start")
@@ -395,7 +398,7 @@ function drawPrevalenceMap() {
             // .transition().duration(speed)
             .attr("y", d => casesPerGender.y(d.id) + casesPerGender.y.bandwidth() / 2 + 5)
             .attr("x", d => casesPerGender.x(total) + 5)
-            .text(d => total)
+            .text(d => formatComma(total))
 
 
         var stateLabel = prevalenceBarGraph.selectAll(".selectedStateLabel")
@@ -588,14 +591,20 @@ function zoomGeorgia() {
             var legend = d3.legendColor()
                 .shapeWidth(30)
                 .orient('vertical')
+                .title("Count of Providers")
                 .scale(providersScale)
                 .labelFormat(d3.format(".0f"));
 
             if (d3.select(".countiesLegendSvg").empty()) {
-                legendGroup = d3.select("#zoomGeorgia").append("svg").attr("class", "countiesLegendSvg")
+                legendGroup = d3.select("#zoomGeorgia")
+                                .append("svg")
+                                .attr("class", "countiesLegendSvg")
+                                .attr("width", 300)
+                                .attr("height", 300)
+                
                 legendGroup.append("g")
                     .attr("class", "countiesLegend")
-                    .attr("transform", "translate(" + 0 + "," + 0 + ")");
+                    .attr("transform", "translate(" + 20 + "," + 40 + ")");
 
                 legendGroup.select(".countiesLegend")
                     .call(legend);
