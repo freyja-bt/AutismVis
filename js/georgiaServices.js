@@ -33,7 +33,7 @@ function georgiaServices() {
         })
 
 
-        ageCategories = ["Under 3 Years", "3-5 Years", "6-11 Years", "12-18 Years", "19-21 Years", "21+ Years", "All Ages"];
+        ageCategories = ["Under 3 Years", "3-5 Years", "6-11 Years", "12-18 Years", "19-21 Years", "21+ Years"]; //"All Ages"
         filteredData.map(row => {
             ages = row["ages"].split("; ");
             ageCategories.forEach(age => {
@@ -115,7 +115,7 @@ function georgiaServices() {
         }
 
 
-        ageKeys = ["agesUnder3", "ages3To5", "ages6To11", "ages12To18", "ages19To21", "agesAbove21", "agesAll"]
+        ageKeys = ["agesUnder3", "ages3To5", "ages6To11", "ages12To18", "ages19To21", "agesAbove21"] //"agesAll"
 
         d3.selectAll(".ageCheckbox").on("change", function () {
             //console.log("changed");
@@ -178,12 +178,12 @@ function georgiaServices() {
             .offset([-5, 0])
             .html(function (d) {
                 if (d.selected) {
-                    text = "(Selected)"
+                    text = "Click to deselect"
                 }
                 else {
-                    text = "(Deselected)"
+                    text = "Click to select"
                 }
-                return 'Age: ' + d.age + '<br>Number of Providers: ' + d.count + "<br>" + text
+                return '<strong>Age:</strong> ' + d.age + '<br><strong>Number of Providers</strong>: ' + d.count + "<br>" + text
             })
         ageBarGraph.call(ageBarGraphTip);
 
@@ -211,17 +211,23 @@ function georgiaServices() {
         d3.selectAll("rect.ageBar")
             .transition()
             .duration(800)
-            .attr("y", function (d) {return y(d.count); })
+            .attr("y", function (d) { return y(d.count); })
             .attr("height", function (d) { return barGraphHeight - y(d.count); })
-            .delay(function (d, i) {return (i * 100) })
+            .delay(function (d, i) { return (i * 100) })
 
 
         g.selectAll(".ageBar").on("click", function (d) {
             d.selected = !d.selected;
             updateMap();
         })
-            .on("mouseover", ageBarGraphTip.show)
-            .on("mouseout", ageBarGraphTip.hide)
+            .on("mouseover", function (d) {
+                ageBarGraphTip.show(d)
+                d3.select(this).attr("stroke", gray0).attr("stroke-width", 0.8);
+            })
+            .on("mouseout", function (d) {
+                ageBarGraphTip.hide()
+                d3.select(this).attr("stroke", "none")
+            })
 
         // add the x Axis
         g.append("g")
@@ -247,31 +253,39 @@ function georgiaServices() {
         d3.select("#agesXAxis").selectAll(".tick").select("line")
             .style("stroke", "white")
 
+        d3.select("#cliff").on("click", function (d) {
+            d3.event.preventDefault();
+            //console.log("cliff")
+            showCliff()
+        })
 
-        line = d3.line()
-            .defined(d => !isNaN(d.count))
-            .x(d => x(d.age))
-            .y(d => y(d.count))
+        function showCliff() {
+            line = d3.line()
+                .defined(d => !isNaN(d.count))
+                .x(d => x(d.age) + (x.bandwidth() / 2))
+                .y(d => y(d.count))
 
-        function transition(path) {
-            path.transition()
-                .duration(5000)
-                .attrTween("stroke-dasharray", tweenDash)
+            function transition(path) {
+                path.transition()
+                    .duration(5000)
+                    .attrTween("stroke-dasharray", tweenDash)
+            }
+
+            function tweenDash() {
+                const l = this.getTotalLength(),
+                    i = d3.interpolateString("0," + l, l + "," + l);
+                return function (t) { return i(t) };
+            }
+            g.append("path")
+                .datum(providersCount.slice(2))
+                .attr("fill", "none")
+                .attr("stroke", "red")
+                .attr("stroke-width", 1.5)
+                .attr("d", line)
+                .call(transition);
         }
 
-        function tweenDash() {
-            console.log(this)
-            const l = this.getTotalLength(),
-                i = d3.interpolateString("0," + l, l + "," + l);
-            return function (t) { return i(t) };
-        }
-        g.append("path")
-            .datum(providersCount)
-            .attr("fill", "none")
-            .attr("stroke", "red")
-            .attr("stroke-width", 1.5)
-            .attr("d", line)
-            .call(transition);
+
 
 
 
