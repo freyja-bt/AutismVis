@@ -351,7 +351,7 @@ function showUnitsAfter(service = null) {
     
     ordinal = d3.scaleOrdinal()
         .range([gray1, blue2, blue1])
-        .domain(["Did not receive service","Did not receive service after high school", "received service during and after high school"]);
+        .domain(["Did not receive service","Did not receive service after high school", "Received service during and after high school"]);
 
     var barLegendSvg = d3.select(".servicesAfter");
 
