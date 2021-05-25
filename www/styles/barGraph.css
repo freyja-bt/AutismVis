@@ -1,0 +1,321 @@
+
+body {margin:0;}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#title{
+  float: left;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+.main {
+  padding: 16px;
+  margin-top: 35px;
+}
+
+.mainLegend{
+  width: 100%;
+  font-size: 14;
+  font-weight: normal;
+}
+.nlts2Pixel{
+  height: 60px;
+}
+
+/* children vs adults */
+.populationText{
+  font-size: 24px;
+}
+
+/* cartogram */
+path.state {
+  stroke: #000;
+  stroke-width: 1px;
+}
+.states:hover{
+  opacity: .5;
+}
+
+.dorlingStateLabel{
+  font-size: 10px;
+  cursor: pointer;
+}
+path.active{
+  stroke: black;
+}
+.county-boundary {
+  fill: none;
+  stroke: black;
+  stroke-width: .3px;
+}
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+
+/* cartogram */
+#leafletMap 
+{ 
+  width: 100%;
+  height: 100%; 
+}
+circle {
+  fill: orange;
+}
+
+.unit{
+  stroke: white;
+  stroke-width: 0.5px;
+}
+
+.xAxisUnit{
+  display: none;
+}
+.yAxisUnit path{
+  display: none;
+}
+.yAxisUnit .tick line{
+  display: none;
+}
+
+/* styling for pixels. TODO: add class. This changes all rectangles
+rect{
+    stroke:white;
+    stroke-width: 0.5px;
+    fill: #343a40
+} */
+
+
+
+html,
+  body{
+     height: 100%;
+     padding: 0;
+     scroll-behavior: smooth;
+     color:#303030;
+     font-family: 'Georgia', sans-serif;
+     font-weight: 400;
+  }
+  h2{
+    line-height: 1.25;
+    padding-top: 45px;
+    font-weight: 300;
+  }
+  svg{
+    /* padding: 20px; */
+  }
+ 
+  strong{
+    font-weight: 600;
+  }
+  #graphic {
+    max-width:  1440px;
+    width: 100%;
+    position:   relative; 
+    height:  100%;
+    position:  relative; 
+    margin:auto;
+  }
+  .container {
+    height: 100%;
+    max-width: 600px;
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    line-height: 1.5;
+    left:65%;
+    /* z-index: 1 */
+  }
+  .container div {
+    /* uncomment this for scrollytext */
+    height: 100%; 
+    display: block;
+    padding: 50px 45px;
+  }
+  .fixed {
+    position: fixed;
+    max-width: 65%;
+    height: 100%;
+    
+  }
+
+  .xaxis{
+    font-size: 12px;
+    font-family: 'Georgia', sans-serif;
+  }
+  .yAxisAsylum text{
+    font-size: 10px;
+    font-weight: lighter;
+  }
+
+  .xAxisSparkline{
+    font-size: 10px;
+    font-family: 'Georgia', sans-serif;
+  }
+
+  .line-plot{
+    stroke-width: 3;
+    stroke: red;
+  }
+
+  .scrollyText
+  {
+    font-size: 18px;
+    /* text-align: justify; */
+  }
+
+
+
+  .d3-tip {
+    line-height: 1.5;
+    padding: 12px;
+    background: rgba(43,43,43, 0.8);
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips specifically */
+  .d3-tip.n:after {
+    margin: -2px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+
+  .sparklineTextAsylum{
+    fill: white;
+    font-size: 12px;
+    font-family: 'Georgia', sans-serif;
+  }
+
+  .sparklineTextNumber{
+    fill: red;
+    font-size: 12px;
+    font-family: 'Georgia', sans-serif;
+  }
+
+  .xAxisSparkline line{
+    display: none;
+  }
+  .xAxisSparkline path{
+    display: none;
+  }
+
+  #div5
+  {
+    
+ 
+  }
+
+  /* #person
+  {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./../images/sahar.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size:100%;
+  } */
+
+  /* .label{
+    color: rgb(219, 23, 23);
+    font-weight: bold;
+  } */
+
+  .greenLabel{
+    color: rgb(43, 174, 102);
+    font-weight: bold;
+  }
+  .sparkLinesHide{
+    opacity: 0;
+  }
+
+  .dropdown{
+    margin-left: 10px;
+    padding: 5px;
+    width: 150px;
+    border: 3px solid;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: "Georgia", sans-serif;
+    background-color: #d9ece2;
+  }
+
+  .dropdown option{
+    font-family: "Georgia", sans-serif;
+    font-size: 15px;
+    padding: 10px;
+      
+  }
+  .dropdown option:hover{
+    background-color: #e61111;
+  }
+
+  .dropdownLabel{
+    padding-left: 70px;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Georgia;
+  }
+
+  .yearDestDropDownLabel{
+    color: rgb(43, 174, 102);
+    padding-left: 20px;
+  }
+
+  .donate{
+    text-decoration: none;
+    border-radius: 18px;
+    background-color: white;
+    opacity: 0.7;
+    margin-left: 200px;
+    margin-top: 15px;
+    height: 50px;
+    font-size: 18px;
+    font-family: 'Georgia';
+    padding: 10px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .personImg{
+    opacity: 0.5
+  }
