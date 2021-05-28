@@ -105,7 +105,9 @@ Language Therapy since high-school. <strong>56% of them no longer received the s
     <svg class='nlts2Pixel mainLegend'></svg>
     <br><svg class='exploreServices mainLegend'></svg>
     <br>
+    <label>
     Explore other services:
+    </label>
     <select id='updateServiceType'>
     <option value=''>Select a Service</option>
     </select>
