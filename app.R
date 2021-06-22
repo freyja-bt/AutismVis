@@ -1,155 +1,156 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(
-    
-        tags$head(HTML(
-        
-        
-        "<title>Autism Cliff Visualization</title>
-        <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'
-    integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=='
-    crossorigin='' />
-        <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'
-        integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=='
-        crossorigin=''></script>
-    <link rel='stylesheet' href='styles/barGraph.css' />
-    <script src='https://unpkg.com/topojson@3'></script>"
-        )),
-        
-        tags$body(HTML(
-            "<div class='navbar'>
-        <a href='../autismmap'>Services Map</a>
-        <a href='../'>Project Home</a>
-        <a style='pointer-events: none;'>|</a>
-        <a id='title' href=''>Autism in Adults</a>
-        <a id='nlts2Outcomes'>NLTS2 Outcomes</a>
-        <a id='providersGA'>Providers in Georgia</a>
-        <a id='adultsPrevalence'>Autism Prevalence in Adults</a>
-
-
-    </div>
-    <div class='main'>
-        <div class='container'>
-            <!-- class='scrollyText' -->
-
-            <div id='childrenVsAdults' class='scrollyText'>
-                <b>NSCH (National Survey for Children's Health)</b> data for 2016 shows that around 1.5 million children
-(ages 3-17) had autism in the year 2016. Based on this and other data, the estimated
-number of adults (ages 18-84) with autism is over 5.4 million in the year 2017.
-<br>
-    <svg class='childrenAdultLegend mainLegend'></svg>
-    </div>
-    <div id='div0' class='scrollyText'>
-    The estimates of <strong>Adults with Autism</strong> (ages 18-84) are calculated nationwide and for each state. 
-<br>Hover on a state to see the total number of estimated cases and prevalence. 
-<br>Find more
-information on the research <a
-href='https://link.springer.com/article/10.1007/s10803-020-04494-4?deliveryName=USCDC_1054-DM28388&error=cookies_not_supported&code=03c05f8f-edf1-4055-bd26-0e2c29e397b8' target='_blank'>here</a>.
-<br>
-    <svg class='barLegend mainLegend'></svg>
-    <!-- The cartogram view represents each state as a bubble and its size represents the estimated number of
-adults
-with Autism. -->
-    <!-- <button id='showCartogram'>Cartogram</button> -->
-    
-    </div>
-    <div id='zoomGeorgia' class='scrollyText'>
-    Let's look at the <strong>Providers of Autism Services in Georgia</strong>. The data is collected from <a
-                    href='https://www.p2pga.org/'>Parent to Parent of Georgia</a>. The colors reprsent the number of
-                providers in each county. Dekalb, and nearby counties have the maximum number of providers. A
-                geographical disparity of services between North and South Georgia is evident.
-                <br>
-                
-            </div>
-            <div id='georgiaServices' class='scrollyText'>
-                The map shows <strong>Locations of All Providers in Georgia</strong> (based on the data extracted from Parent To Parent). 
-                Select or deselect age groups in the bar graph to filter locations of providers on the map. 
-                <br>
-                The total number of providers <strong>drops by 50%</strong> for adults of ages 21 and above compared to children of ages 6-11 years.
-                It's almost like youths fall off a <a id='cliff' href=''>Services Cliff</a> when they transition into adulthood.
-<br>
-    <svg id='ageBarGraph'></svg>
-    
-    </div>
-    <div id='div1' class='scrollyText'>
-    The <a href='https://nlts2.sri.com/index.html'>NLTS2</a> (National Longitudinal Transitional Study 2)
-data
-covers a population sample that represents over 14,000 Autistic youths 
-who received Special Education and were 13 to 16 years of age in 2000, when the survey was initiated.
-Each pixel here represents 10 students.
-<br><svg class='nlts2Pixel mainLegend'></svg>
-    </div>
-    <div id='div2' class='scrollyText'>
-    Approximately 26% of young adults on the autism spectrum received no services – services which could
-help
-them become employed, continue their education, or live more independently.
-<br><svg class='noService mainLegend'></svg>
-    </div>
-    <div id='div3' class='scrollyText'>
-    Frequency of services reduced drastically since high-school. 66% of autistic youths 
-received Speech
-Language
-Therapy at the age of 17.
-<br><svg class='servicesBefore mainLegend'></svg>
-    
-    </div>
-    <div id='div4' class='scrollyText'>
-    Only 10% of young Autistic adults received Speech
-Language Therapy since high-school. <strong>56% of them no longer received the service.</strong>
-    <br><svg class='servicesAfter mainLegend'></svg>
-    </div>
-    <div id='div5' class='scrollyText'>
-    <br>
-    <svg class='nlts2Pixel mainLegend'></svg>
-    <br><svg class='exploreServices mainLegend'></svg>
-    <br>
-    <label>
-    Explore other services:
-    </label>
-    <select id='updateServiceType'>
-    <option value=''>Select a Service</option>
-    </select>
-    <!-- todo: update text showing est of youth not receiving service -->
-    <div id='servicesInfo'></div>
-    </div>
-    <!-- <div id='div5'>
-    div5
-</div> -->
-    
-    
-    </div>
-    
-    <!-- <svg width='960', height='600' id='cartogram'></svg> -->
-    
-    <div class='fixed'>
-    <!-- <button id='prevVis'>Prev</button>
-    <button id='nextVis'>Next</button> -->
-    
-    <div id='leafletMap' style='display:none'></div>
-    </div>
-    </div>
-    
-    
-    
-    <script src='https://d3js.org/d3.v4.min.js'></script>
-    <script src='https://d3js.org/d3-scale-chromatic.v1.min.js'></script>
-    
-    <script src='js/d3-tip.js'></script>
-    <script src='js/d3-legend.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js'></script>
-    <script src='js/main.js'></script>
-    <script src='js/prevalence.js'></script>
-    <script src='js/childrenVsAdults.js'></script>
-    <script src='js/georgiaServices.js'></script>
-    <script src='js/slider.js'></script>"
-    
-        )))
-
+# ui <- fluidPage(
+#     
+#         tags$head(HTML(
+#         
+#         
+#         "<title>Autism Cliff Visualization</title>
+#         <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'
+#     integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=='
+#     crossorigin='' />
+#         <!-- Make sure you put this AFTER Leaflet's CSS -->
+#     <script src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'
+#         integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=='
+#         crossorigin=''></script>
+#     <link rel='stylesheet' href='styles/barGraph.css' />
+#     <script src='https://unpkg.com/topojson@3'></script>"
+#         )),
+#         
+#         tags$body(HTML(
+#             "<div class='navbar'>
+#         <a href='../autismmap'>Services Map</a>
+#         <a href='../'>Project Home</a>
+#         <a style='pointer-events: none;'>|</a>
+#         <a id='title' href=''>Autism in Adults</a>
+#         <a id='nlts2Outcomes'>NLTS2 Outcomes</a>
+#         <a id='providersGA'>Providers in Georgia</a>
+#         <a id='adultsPrevalence'>Autism Prevalence in Adults</a>
+# 
+# 
+#     </div>
+#     <div class='main'>
+#         <div class='container'>
+#             <!-- class='scrollyText' -->
+# 
+#             <div id='childrenVsAdults' class='scrollyText'>
+#                 <b>NSCH (National Survey for Children's Health)</b> data for 2016 shows that around 1.5 million children
+# (ages 3-17) had autism in the year 2016. Based on this and other data, the estimated
+# number of adults (ages 18-84) with autism is over 5.4 million in the year 2017.
+# <br>
+#     <svg class='childrenAdultLegend mainLegend'></svg>
+#     </div>
+#     <div id='div0' class='scrollyText'>
+#     The estimates of <strong>Adults with Autism</strong> (ages 18-84) are calculated nationwide and for each state. 
+# <br>Hover on a state to see the total number of estimated cases and prevalence. 
+# <br>Find more
+# information on the research <a
+# href='https://link.springer.com/article/10.1007/s10803-020-04494-4?deliveryName=USCDC_1054-DM28388&error=cookies_not_supported&code=03c05f8f-edf1-4055-bd26-0e2c29e397b8' target='_blank'>here</a>.
+# <br>
+#     <svg class='barLegend mainLegend'></svg>
+#     <!-- The cartogram view represents each state as a bubble and its size represents the estimated number of
+# adults
+# with Autism. -->
+#     <!-- <button id='showCartogram'>Cartogram</button> -->
+#     
+#     </div>
+#     <div id='zoomGeorgia' class='scrollyText'>
+#     Let's look at the <strong>Providers of Autism Services in Georgia</strong>. The data is collected from <a
+#                     href='https://www.p2pga.org/'>Parent to Parent of Georgia</a>. The colors reprsent the number of
+#                 providers in each county. Dekalb, and nearby counties have the maximum number of providers. A
+#                 geographical disparity of services between North and South Georgia is evident.
+#                 <br>
+#                 
+#             </div>
+#             <div id='georgiaServices' class='scrollyText'>
+#                 The map shows <strong>Locations of All Providers in Georgia</strong> (based on the data extracted from Parent To Parent). 
+#                 Select or deselect age groups in the bar graph to filter locations of providers on the map. 
+#                 <br>
+#                 The total number of providers <strong>drops by 50%</strong> for adults of ages 21 and above compared to children of ages 6-11 years.
+#                 It's almost like youths fall off a <a id='cliff' href=''>Services Cliff</a> when they transition into adulthood.
+# <br>
+#     <svg id='ageBarGraph'></svg>
+#     
+#     </div>
+#     <div id='div1' class='scrollyText'>
+#     The <a href='https://nlts2.sri.com/index.html'>NLTS2</a> (National Longitudinal Transitional Study 2)
+# data
+# covers a population sample that represents over 14,000 Autistic youths 
+# who received Special Education and were 13 to 16 years of age in 2000, when the survey was initiated.
+# Each pixel here represents 10 students.
+# <br><svg class='nlts2Pixel mainLegend'></svg>
+#     </div>
+#     <div id='div2' class='scrollyText'>
+#     Approximately 26% of young adults on the autism spectrum received no services – services which could
+# help
+# them become employed, continue their education, or live more independently.
+# <br><svg class='noService mainLegend'></svg>
+#     </div>
+#     <div id='div3' class='scrollyText'>
+#     Frequency of services reduced drastically since high-school. 66% of autistic youths 
+# received Speech
+# Language
+# Therapy at the age of 17.
+# <br><svg class='servicesBefore mainLegend'></svg>
+#     
+#     </div>
+#     <div id='div4' class='scrollyText'>
+#     Only 10% of young Autistic adults received Speech
+# Language Therapy since high-school. <strong>56% of them no longer received the service.</strong>
+#     <br><svg class='servicesAfter mainLegend'></svg>
+#     </div>
+#     <div id='div5' class='scrollyText'>
+#     <br>
+#     <svg class='nlts2Pixel mainLegend'></svg>
+#     <br><svg class='exploreServices mainLegend'></svg>
+#     <br>
+#     <label>
+#     Explore other services:
+#     </label>
+#     <select id='updateServiceType'>
+#     <option value=''>Select a Service</option>
+#     </select>
+#     <!-- todo: update text showing est of youth not receiving service -->
+#     <div id='servicesInfo'></div>
+#     </div>
+#     <!-- <div id='div5'>
+#     div5
+# </div> -->
+#     
+#     
+#     </div>
+#     
+#     <!-- <svg width='960', height='600' id='cartogram'></svg> -->
+#     
+#     <div class='fixed'>
+#     <!-- <button id='prevVis'>Prev</button>
+#     <button id='nextVis'>Next</button> -->
+#     
+#     <div id='leafletMap' style='display:none'></div>
+#     </div>
+#     </div>
+#     
+#     
+#     
+#     <script src='https://d3js.org/d3.v4.min.js'></script>
+#     <script src='https://d3js.org/d3-scale-chromatic.v1.min.js'></script>
+#     
+#     <script src='js/d3-tip.js'></script>
+#     <script src='js/d3-legend.js'></script>
+#     <script src='https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js'></script>
+#     <script src='js/main.js'></script>
+#     <script src='js/prevalence.js'></script>
+#     <script src='js/childrenVsAdults.js'></script>
+#     <script src='js/georgiaServices.js'></script>
+#     <script src='js/slider.js'></script>"
+#     
+#         )))
+# 
 
 # Define server logic required to draw a histogram
 server <- function(input, output) { }
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+# shinyApp(ui = ui, server = server)
+shinyApp(ui = htmlTemplate("www/index.html"),server)
