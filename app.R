@@ -153,4 +153,8 @@ server <- function(input, output) { }
 
 # Run the application 
 # shinyApp(ui = ui, server = server)
+<<<<<<< HEAD
 shinyApp(ui = htmlTemplate("www/index.html"),server)
+=======
+shinyApp(ui = htmlTemplate("www/index.html"),server)
+>>>>>>> ShrishtiAK-master
