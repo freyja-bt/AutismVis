@@ -2,4 +2,4 @@ library(shiny)
 
 server <- function(input, output) { }
 
-shinyApp(ui = htmlTemplate("index.html"),server)
+shinyApp(ui = htmlTemplate("www/index.html"),server)
